@@ -9,3 +9,6 @@ out
 
 # registre local (cf. data/orders.seed.json pour le jeu de départ committé)
 data/orders.json
+
+.vercel
+.env*
