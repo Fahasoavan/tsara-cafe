@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-creme text-noir font-sans antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(192, 122, 58, 0.35);
+  color: #1e1612;
+}
+
+/* Accessibilité : focus visible chaleureux */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #c07a3a;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Masquer les flèches des inputs number */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* --- Utilitaires maison --- */
+.btn-card {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300;
+}
+.btn-card:active {
+  @apply translate-y-0 scale-[0.97];
+}
+
+.chip {
+  @apply inline-flex items-center gap-1 rounded-full border border-noir/15 bg-white/60 px-3 py-1 text-xs font-medium text-noir/80;
+}
+
+.label-warm {
+  @apply mb-2 inline-block text-xs font-semibold uppercase tracking-[0.18em] text-caramel-deep;
+}
+
+/* Reveal à l'apparition (IntersectionObserver) */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.reveal-left {
+  transform: translateX(-26px);
+}
+.reveal.reveal-zoom {
+  transform: scale(0.94);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Vapeur animée du café (SVG stroke) */
+@keyframes steam-rise {
+  0% {
+    stroke-dashoffset: 18;
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  100% {
+    stroke-dashoffset: -30;
+    opacity: 0;
+  }
+}
+.steam-path {
+  stroke-dasharray: 6 12;
+  animation: steam-rise 2.6s linear infinite;
+}
+
+/* Bandeau défilant « livraison offerte » */
+.marquee-mask {
+  overflow: hidden;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+}
+
+/* Squelette de chargement */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(227, 210, 188, 0.5) 25%,
+    rgba(227, 210, 188, 0.95) 50%,
+    rgba(227, 210, 188, 0.5) 75%
+  );
+  background-size: 200% 100%;
+  border-radius: 10px;
+  animation: shimmer 1.6s linear infinite;
+}
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* Drapeau : petits rectangles arrondis FR/EN */
+.lang-pill {
+  @apply rounded-full px-2.5 py-1 text-xs font-semibold transition-colors duration-200;
+}
+
+/* Liens soulignés animés */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1.5px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease;
+}
+.link-underline:hover {
+  background-size: 100% 1.5px;
+}
+
+/* --- Facture imprimable --- */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-sheet {
+    box-shadow: none !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+  body {
+    background: #fff !important;
+  }
+  @page {
+    margin: 1.5cm;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .marquee-track {
+    animation: none !important;
+  }
+  .steam-path {
+    animation: none;
+    opacity: 0.5;
+  }
+}
