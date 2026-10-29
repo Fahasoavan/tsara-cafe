@@ -1,15 +1,30 @@
 import { NextResponse } from 'next/server';
 import { PRODUCTS, type FormatId, type GrindId } from '@/data/products';
-import { computeTotals, itemsFromLines, saveOrders, composeOrder, listOrders } from '@/lib/orders';
+import { isAdmin, unauthorizedResponse } from '@/lib/admin-auth';
+import { clientIp, rateLimit } from '@/lib/rate-limit';
+import { fetchOrders, storeOrders } from '@/lib/orders-store';
+import { computeTotals, itemsFromLines, composeOrder } from '@/lib/orders';
 import type { CartLine, OrderStatus, StoredOrder } from '@/lib/types';
 
 /**
  * POST /api/orders/demo
  * Génère des commandes de DÉMONSTRATION réalistes, réparties sur les
  * 30 derniers jours, pour donner vie au tableau de bord de l'admin.
- * Corps : { count?: number } (1–60, 25 par défaut)
+ * Corps : { count?: number } (1–60, 25 par défaut).
+ *
+ * Route SENSIBLE (inonde la base) : mot de passe admin requis + limite
+ * de fréquence en seconde barrière. Les commandes créées sont stockées
+ * SANS expiration (flag `persistent`) : le dashboard ne se vide jamais.
  */
+const DEMO_LIMIT = 5; // générations…
+const DEMO_WINDOW_MS = 60_000; // …par minute et par IP
+
 export async function POST(request: Request) {
+  if (!isAdmin(request)) return unauthorizedResponse();
+  if (!rateLimit(`demo:${clientIp(request)}`, DEMO_LIMIT, DEMO_WINDOW_MS)) {
+    return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
+  }
+
   let body: { count?: number };
   try {
     body = (await request.json()) as { count?: number };
@@ -18,7 +33,7 @@ export async function POST(request: Request) {
   }
   const count = Math.min(60, Math.max(1, Math.floor(Number(body?.count) || 25)));
 
-  const existing = await listOrders();
+  const existing = await fetchOrders();
   const usedIds = new Set(existing.map((o) => o.id));
   const created: StoredOrder[] = [];
 
@@ -91,7 +106,7 @@ export async function POST(request: Request) {
     usedIds.add(createdOrder.id);
   }
 
-  await saveOrders(created);
+  await storeOrders(created, { persistent: true });
   return NextResponse.json({ created: created.length }, { status: 201 });
 }
 

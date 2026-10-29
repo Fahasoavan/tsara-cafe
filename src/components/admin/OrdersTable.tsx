@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useI18n } from '@/lib/i18n';
 import { formatDate, formatMoney } from '@/lib/format';
+import { AdminAuthError, fetchAsAdmin } from '@/lib/admin-client';
 import { IconCheck, IconLoader } from '@/components/ui/icons';
 import { ORDER_STATUSES, type OrderStatus, type StoredOrder } from '@/lib/types';
 
@@ -11,20 +12,24 @@ import { ORDER_STATUSES, type OrderStatus, type StoredOrder } from '@/lib/types'
 export function OrdersTable({
   orders,
   onOrderChanged,
+  onRequireAuth,
 }: {
   orders: StoredOrder[];
   onOrderChanged: (order: StoredOrder) => void;
+  /** Appelé quand une action renvoie 401 → fait apparaître la saisie du mot de passe */
+  onRequireAuth: () => void;
 }) {
   const { t, locale } = useI18n();
   const [savingId, setSavingId] = useState<string | null>(null);
   const [flash, setFlash] = useState<Set<string>>(new Set());
+  const [rowError, setRowError] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const changeStatus = async (id: string, next: OrderStatus) => {
     setSavingId(id);
     setError(null);
     try {
-      const res = await fetch(`/api/orders/${encodeURIComponent(id)}/status`, {
+      const res = await fetchAsAdmin(`/api/orders/${encodeURIComponent(id)}/status`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: next }),
@@ -40,12 +45,19 @@ export function OrdersTable({
           return copy;
         });
       }, 1600);
-    } catch {
-      setError(t('admin.error'));
+    } catch (err) {
+      if (err instanceof AdminAuthError) {
+        onRequireAuth();
+      } else {
+        setError(t('admin.error'));
+      }
     } finally {
       setSavingId(null);
     }
   };
+
+  /* E-mail masqué (visiteur sans mot de passe) = lien confirmation inutilisable */
+  const emailIsReal = (email: string) => !email.includes('***');
 
   return (
     <>
@@ -80,16 +92,22 @@ export function OrdersTable({
                   <td className="whitespace-nowrap px-5 py-4 text-noir/70">{formatDate(order.createdAt, locale)}</td>
                   <td className="px-5 py-4">
                     <span className="block font-semibold">{order.customer.name}</span>
+                    {/* Masqué pour les visiteurs (f***@gmail.com), complet pour l'admin déverrouillé */}
                     <span className="block text-xs text-noir/50">{order.customer.email}</span>
                   </td>
                   <td className="px-5 py-4 text-noir/70">
                     {order.items.reduce((sum, item) => sum + item.qty, 0)} ×{' '}
-                    <Link
-                      href={`/commande/${encodeURIComponent(order.id)}`}
-                      className="link-underline font-medium text-caramel-deep"
-                    >
-                      {order.items.length}
-                    </Link>
+                    {emailIsReal(order.customer.email) ? (
+                      <Link
+                        href={`/commande/${encodeURIComponent(order.id)}?email=${encodeURIComponent(order.customer.email)}`}
+                        className="link-underline font-medium text-caramel-deep"
+                        title={t('admin.order.link')}
+                      >
+                        {order.items.length}
+                      </Link>
+                    ) : (
+                      <span title={t('admin.auth.lockedHint')}>{order.items.length}</span>
+                    )}
                   </td>
                   <td className="px-5 py-4 text-right font-semibold">{formatMoney(order.total, locale)}</td>
                   <td className="px-5 py-4">
@@ -97,7 +115,7 @@ export function OrdersTable({
                       <select
                         value={order.status}
                         onChange={(e) => changeStatus(order.id, e.target.value as OrderStatus)}
-                        disabled={savingId === order.id}
+                        disabled={savingId === order.id || rowError}
                         aria-label={`${t('admin.th.status')} ${order.id}`}
                         className="rounded-xl border border-noir/15 bg-white px-3 py-2 text-xs font-semibold focus-visible:outline-none disabled:opacity-60"
                       >
@@ -120,7 +138,9 @@ export function OrdersTable({
           </table>
         </div>
       )}
-      <p className="mt-4 text-xs text-noir/40">data/orders.json — fichier local de démonstration</p>
+      <p className="mt-4 text-xs text-noir/40">
+        {t('admin.dataStore')}
+      </p>
     </>
   );
 }

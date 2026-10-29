@@ -25,7 +25,7 @@ export const COUNTRIES: { value: string; fr: string; en: string }[] = [
 const FR: Record<string, string> = {
   /* ---- Global ---- */
   'brand.tagline': 'Café de spécialité de Madagascar',
-  'demo.banner': 'Mode démonstration — aucun paiement réel n’est effectué.',
+  'demo.banner': 'Site de démonstration — n’entrez pas de vraies données personnelles, aucun paiement réel n’est effectué.',
   'a11y.skip': 'Aller au contenu',
   'a11y.openMenu': 'Ouvrir le menu',
   'a11y.closeMenu': 'Fermer le menu',
@@ -223,6 +223,7 @@ const FR: Record<string, string> = {
   'checkout.error.email': 'Adresse e-mail invalide.',
   'checkout.error.card': 'Merci de vérifier les informations de carte.',
   'checkout.error.cvc': 'Le CVC doit contenir 3 chiffres.',
+  'checkout.error.rate': 'Trop de tentatives. Merci de patienter quelques minutes avant de réessayer.',
   'checkout.error.expiry': 'Date d’expiration invalide ou passée.',
   'checkout.error.number': 'Numéro de carte incomplet.',
   'checkout.error.declined':
@@ -246,6 +247,10 @@ const FR: Record<string, string> = {
   'confirm.home': 'Retour à l’accueil',
   'confirm.notfound.title': 'Commande introuvable',
   'confirm.notfound.sub': 'Vérifiez le lien, ou essayez la page de suivi avec votre numéro de commande.',
+  'confirm.email.title': 'Consultation sécurisée',
+  'confirm.email.sub': 'Renseignez l’e-mail utilisé lors de la commande pour afficher son détail (nom, adresse).',
+  'confirm.email.invalid': 'E-mail invalide.',
+  'confirm.email.cta': 'Afficher ma commande',
   'confirm.loading': 'Chargement de votre commande…',
 
   /* ---- Facture ---- */
@@ -287,7 +292,14 @@ const FR: Record<string, string> = {
 
   /* ---- Admin ---- */
   'admin.title': 'Commandes',
-  'admin.sub': 'Mode démonstration — accès libre, sans mot de passe.',
+  'admin.sub': 'Mode démonstration — lecture libre ; les actions demandent le mot de passe admin.',
+  'admin.auth.unlock': 'Déverrouiller',
+  'admin.auth.password': 'Mot de passe administrateur',
+  'admin.auth.badPassword': 'Mot de passe refusé — ou variable ADMIN_PASSWORD non définie côté serveur.',
+  'admin.auth.hint': 'Mot de passe défini via la variable d’environnement ADMIN_PASSWORD. Lecture seule et e-mails masqués tant que vous n’êtes pas déverrouillé.',
+  'admin.auth.lockedHint': 'Détails protégés — déverrouillez pour voir la commande',
+  'admin.order.link': 'Voir la page de confirmation',
+  'admin.dataStore': 'Stockage : Redis Upstash (TTL 3 jours) ou data/orders.json en local.',
   'admin.tab.dashboard': 'Tableau de bord',
   'admin.tab.orders': 'Commandes',
   'admin.kpi.revenue': 'Chiffre d’affaires',
@@ -372,7 +384,7 @@ const FR: Record<string, string> = {
 const EN: Record<string, string> = {
   /* ---- Global ---- */
   'brand.tagline': 'Specialty coffee from Madagascar',
-  'demo.banner': 'Demo mode — no real payment is processed.',
+  'demo.banner': 'Demo website — do not enter real personal data, no real payment is processed.',
   'a11y.skip': 'Skip to content',
   'a11y.openMenu': 'Open the menu',
   'a11y.closeMenu': 'Close the menu',
@@ -569,6 +581,7 @@ const EN: Record<string, string> = {
   'checkout.error.email': 'Invalid email address.',
   'checkout.error.card': 'Please check your card details.',
   'checkout.error.cvc': 'The CVC must be 3 digits.',
+  'checkout.error.rate': 'Too many attempts. Please wait a few minutes before trying again.',
   'checkout.error.expiry': 'Invalid or past expiry date.',
   'checkout.error.number': 'Incomplete card number.',
   'checkout.error.declined':
@@ -592,6 +605,10 @@ const EN: Record<string, string> = {
   'confirm.home': 'Back home',
   'confirm.notfound.title': 'Order not found',
   'confirm.notfound.sub': 'Double-check the link, or search for your order number on the tracking page.',
+  'confirm.email.title': 'Secure access',
+  'confirm.email.sub': 'Enter the email used at checkout to open the order details (name, address).',
+  'confirm.email.invalid': 'Invalid email.',
+  'confirm.email.cta': 'Show my order',
   'confirm.loading': 'Loading your order…',
 
   /* ---- Invoice ---- */
@@ -632,7 +649,14 @@ const EN: Record<string, string> = {
 
   /* ---- Admin ---- */
   'admin.title': 'Orders',
-  'admin.sub': 'Demo mode — open access, no password.',
+  'admin.sub': 'Demo mode — free read access; actions require the admin password.',
+  'admin.auth.unlock': 'Unlock',
+  'admin.auth.password': 'Admin password',
+  'admin.auth.badPassword': 'Password rejected (is ADMIN_PASSWORD set server-side?).',
+  'admin.auth.hint': 'Password is set via the ADMIN_PASSWORD environment variable. Read-only with masked emails until unlocked.',
+  'admin.auth.lockedHint': 'Protected details — unlock to view the order',
+  'admin.order.link': 'Open the confirmation page',
+  'admin.dataStore': 'Storage: Upstash Redis (3-day TTL) or local data/orders.json.',
   'admin.tab.dashboard': 'Dashboard',
   'admin.tab.orders': 'Orders',
   'admin.kpi.revenue': 'Revenue',

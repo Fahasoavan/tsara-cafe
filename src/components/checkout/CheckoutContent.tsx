@@ -15,7 +15,7 @@ import { Reveal } from '@/components/ui/Reveal';
 import { IconCheck, IconClose, IconLoader, IconShield } from '@/components/ui/icons';
 import type { CartLine } from '@/lib/types';
 
-type ServerReason = 'invalid_number' | 'invalid_expiry' | 'invalid_cvc' | 'declined';
+type ServerReason = 'invalid_number' | 'invalid_expiry' | 'invalid_cvc' | 'declined' | 'rate_limited';
 type ClientReason = 'address' | 'email' | 'card' | 'empty' | 'generic';
 type CheckoutError = ServerReason | ClientReason;
 
@@ -101,6 +101,8 @@ export function CheckoutContent() {
         return t('checkout.error.expiry');
       case 'invalid_cvc':
         return t('checkout.error.cvc');
+      case 'rate_limited':
+        return t('checkout.error.rate');
       default:
         return t('checkout.error.generic');
     }
@@ -160,9 +162,12 @@ export function CheckoutContent() {
 
       if (response.status === 201) {
         const body = (await response.json()) as { id: string };
-        /* Panier vidé SEULEMENT après un paiement accepté */
+        /* Panier vidé SEULEMENT après un paiement accepté ;
+           l'e-mail sécurise la page de confirmation. */
         clear();
-        router.replace(`/commande/${encodeURIComponent(body.id)}`);
+        router.replace(
+          `/commande/${encodeURIComponent(body.id)}?email=${encodeURIComponent(address.email.trim())}`,
+        );
         return;
       }
 
@@ -173,6 +178,8 @@ export function CheckoutContent() {
         showError('address');
       } else if (body.error === 'cart') {
         showError('empty');
+      } else if (body.error === 'rate_limited') {
+        showError('rate_limited');
       } else {
         showError('generic');
       }

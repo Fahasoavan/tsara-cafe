@@ -1,1430 +1,1545 @@
-[
-  {
-    "id": "TS-NTVQZ3",
-    "createdAt": "2026-10-15T15:42:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Nadia Rasoanaivo",
-      "address": "12 rue des Baobabs",
-      "postalCode": "68001",
-      "city": "Antananarivo",
-      "country": "France",
-      "email": "client1@demo.fr"
+﻿[
+    {
+        "id":  "TS-NTVQZ3",
+        "createdAt":  "2026-10-15T15:42:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Nadia Rasoanaivo",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "68001",
+                         "city":  "Antananarivo",
+                         "country":  "France",
+                         "email":  "client1@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "bourbon-pointu",
+                          "name":  {
+                                       "fr":  "Bourbon Pointu",
+                                       "en":  "Bourbon Pointu"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "grains",
+                          "qty":  1,
+                          "unitPrice":  89,
+                          "lineTotal":  89,
+                          "accent":  "#C07A3A"
+                      }
+                  ],
+        "promoCode":  "BIENVENUE10",
+        "subtotal":  89,
+        "discount":  8.9,
+        "shipping":  0,
+        "total":  80.1,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033097_0",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "bourbon-pointu",
-        "name": {
-          "fr": "Bourbon Pointu",
-          "en": "Bourbon Pointu"
-        },
-        "format": "s1000",
-        "grind": "grains",
-        "qty": 1,
-        "unitPrice": 89,
-        "lineTotal": 89,
-        "accent": "#C07A3A"
-      }
-    ],
-    "promoCode": "BIENVENUE10",
-    "subtotal": 89,
-    "discount": 8.9,
-    "shipping": 0,
-    "total": 80.1,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033097_0",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-3Y6SHB",
-    "createdAt": "2026-10-11T13:18:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Marc Delaunay",
-      "address": "12 rue des Baobabs",
-      "postalCode": "69002",
-      "city": "Lyon",
-      "country": "France",
-      "email": "client2@demo.fr"
+    {
+        "id":  "TS-3Y6SHB",
+        "createdAt":  "2026-10-11T13:18:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Marc Delaunay",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "69002",
+                         "city":  "Lyon",
+                         "country":  "France",
+                         "email":  "client2@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "ambanja-grand-cru",
+                          "name":  {
+                                       "fr":  "Ambanja Grand Cru",
+                                       "en":  "Ambanja Grand Cru"
+                                   },
+                          "format":  "s250",
+                          "grind":  "piston",
+                          "qty":  1,
+                          "unitPrice":  12.9,
+                          "lineTotal":  12.9,
+                          "accent":  "#8A5A32"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  12.9,
+        "discount":  0,
+        "shipping":  6.9,
+        "total":  19.8,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033097_1",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "ambanja-grand-cru",
-        "name": {
-          "fr": "Ambanja Grand Cru",
-          "en": "Ambanja Grand Cru"
-        },
-        "format": "s250",
-        "grind": "piston",
-        "qty": 1,
-        "unitPrice": 12.9,
-        "lineTotal": 12.9,
-        "accent": "#8A5A32"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 12.9,
-    "discount": 0,
-    "shipping": 6.9,
-    "total": 19.8,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033097_1",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-TXPMSL",
-    "createdAt": "2026-10-25T14:13:00.000Z",
-    "status": "paid",
-    "customer": {
-      "name": "Zoé Mercier",
-      "address": "12 rue des Baobabs",
-      "postalCode": "70003",
-      "city": "Bruxelles",
-      "country": "France",
-      "email": "client3@demo.fr"
+    {
+        "id":  "TS-TXPMSL",
+        "createdAt":  "2026-10-25T14:13:00.000Z",
+        "status":  "paid",
+        "customer":  {
+                         "name":  "ZoÃ© Mercier",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "70003",
+                         "city":  "Bruxelles",
+                         "country":  "France",
+                         "email":  "client3@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "fianarantsoa-bio",
+                          "name":  {
+                                       "fr":  "Hauts Plateaux Bio",
+                                       "en":  "Hauts Plateaux Bio"
+                                   },
+                          "format":  "s250",
+                          "grind":  "moka",
+                          "qty":  4,
+                          "unitPrice":  14.9,
+                          "lineTotal":  59.6,
+                          "accent":  "#6B7F5E"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  59.6,
+        "discount":  0,
+        "shipping":  6.9,
+        "total":  66.5,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033097_2",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "fianarantsoa-bio",
-        "name": {
-          "fr": "Hauts Plateaux Bio",
-          "en": "Hauts Plateaux Bio"
-        },
-        "format": "s250",
-        "grind": "moka",
-        "qty": 4,
-        "unitPrice": 14.9,
-        "lineTotal": 59.6,
-        "accent": "#6B7F5E"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 59.6,
-    "discount": 0,
-    "shipping": 6.9,
-    "total": 66.5,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033097_2",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-Q4Y5M7",
-    "createdAt": "2026-10-19T08:52:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Léo Bernard",
-      "address": "12 rue des Baobabs",
-      "postalCode": "71004",
-      "city": "Paris",
-      "country": "France",
-      "email": "client4@demo.fr"
+    {
+        "id":  "TS-Q4Y5M7",
+        "createdAt":  "2026-10-19T08:52:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "LÃ©o Bernard",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "71004",
+                         "city":  "Paris",
+                         "country":  "France",
+                         "email":  "client4@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "plateaux-antsirabe",
+                          "name":  {
+                                       "fr":  "Plateaux dâ€™Antsirabe",
+                                       "en":  "Plateaux dâ€™Antsirabe"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "espresso",
+                          "qty":  1,
+                          "unitPrice":  42.5,
+                          "lineTotal":  42.5,
+                          "accent":  "#A57C43"
+                      },
+                      {
+                          "productId":  "cacao-sauvage",
+                          "name":  {
+                                       "fr":  "Cacao Sauvage",
+                                       "en":  "Cacao Sauvage"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "moka",
+                          "qty":  3,
+                          "unitPrice":  40,
+                          "lineTotal":  120,
+                          "accent":  "#5A4232"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  162.5,
+        "discount":  0,
+        "shipping":  0,
+        "total":  162.5,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033097_3",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "plateaux-antsirabe",
-        "name": {
-          "fr": "Plateaux d’Antsirabe",
-          "en": "Plateaux d’Antsirabe"
-        },
-        "format": "s1000",
-        "grind": "espresso",
-        "qty": 1,
-        "unitPrice": 42.5,
-        "lineTotal": 42.5,
-        "accent": "#A57C43"
-      },
-      {
-        "productId": "cacao-sauvage",
-        "name": {
-          "fr": "Cacao Sauvage",
-          "en": "Cacao Sauvage"
-        },
-        "format": "s1000",
-        "grind": "moka",
-        "qty": 3,
-        "unitPrice": 40,
-        "lineTotal": 120,
-        "accent": "#5A4232"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 162.5,
-    "discount": 0,
-    "shipping": 0,
-    "total": 162.5,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033097_3",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-77ZEWC",
-    "createdAt": "2026-10-10T08:30:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Claire Fontaine",
-      "address": "12 rue des Baobabs",
-      "postalCode": "72005",
-      "city": "Bordeaux",
-      "country": "France",
-      "email": "client5@demo.fr"
+    {
+        "id":  "TS-77ZEWC",
+        "createdAt":  "2026-10-10T08:30:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Claire Fontaine",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "72005",
+                         "city":  "Bordeaux",
+                         "country":  "France",
+                         "email":  "client5@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "andasibe-floral",
+                          "name":  {
+                                       "fr":  "VallÃ©e dâ€™Andasibe",
+                                       "en":  "VallÃ©e dâ€™Andasibe"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "piston",
+                          "qty":  1,
+                          "unitPrice":  47.5,
+                          "lineTotal":  47.5,
+                          "accent":  "#B08A5A"
+                      },
+                      {
+                          "productId":  "ambanja-grand-cru",
+                          "name":  {
+                                       "fr":  "Ambanja Grand Cru",
+                                       "en":  "Ambanja Grand Cru"
+                                   },
+                          "format":  "s250",
+                          "grind":  "grains",
+                          "qty":  1,
+                          "unitPrice":  12.9,
+                          "lineTotal":  12.9,
+                          "accent":  "#8A5A32"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  60.4,
+        "discount":  0,
+        "shipping":  0,
+        "total":  60.4,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033097_4",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "andasibe-floral",
-        "name": {
-          "fr": "Vallée d’Andasibe",
-          "en": "Vallée d’Andasibe"
-        },
-        "format": "s1000",
-        "grind": "piston",
-        "qty": 1,
-        "unitPrice": 47.5,
-        "lineTotal": 47.5,
-        "accent": "#B08A5A"
-      },
-      {
-        "productId": "ambanja-grand-cru",
-        "name": {
-          "fr": "Ambanja Grand Cru",
-          "en": "Ambanja Grand Cru"
-        },
-        "format": "s250",
-        "grind": "grains",
-        "qty": 1,
-        "unitPrice": 12.9,
-        "lineTotal": 12.9,
-        "accent": "#8A5A32"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 60.4,
-    "discount": 0,
-    "shipping": 0,
-    "total": 60.4,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033097_4",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-KCJP3D",
-    "createdAt": "2026-10-05T08:16:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Ando Rakotondrabe",
-      "address": "12 rue des Baobabs",
-      "postalCode": "73006",
-      "city": "Toamasina",
-      "country": "France",
-      "email": "client6@demo.fr"
+    {
+        "id":  "TS-KCJP3D",
+        "createdAt":  "2026-10-05T08:16:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Ando Rakotondrabe",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "73006",
+                         "city":  "Toamasina",
+                         "country":  "France",
+                         "email":  "client6@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "ambanja-grand-cru",
+                          "name":  {
+                                       "fr":  "Ambanja Grand Cru",
+                                       "en":  "Ambanja Grand Cru"
+                                   },
+                          "format":  "s250",
+                          "grind":  "piston",
+                          "qty":  3,
+                          "unitPrice":  12.9,
+                          "lineTotal":  38.7,
+                          "accent":  "#8A5A32"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  38.7,
+        "discount":  0,
+        "shipping":  6.9,
+        "total":  45.6,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033097_5",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "ambanja-grand-cru",
-        "name": {
-          "fr": "Ambanja Grand Cru",
-          "en": "Ambanja Grand Cru"
-        },
-        "format": "s250",
-        "grind": "piston",
-        "qty": 3,
-        "unitPrice": 12.9,
-        "lineTotal": 38.7,
-        "accent": "#8A5A32"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 38.7,
-    "discount": 0,
-    "shipping": 6.9,
-    "total": 45.6,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033097_5",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-UZNNKL",
-    "createdAt": "2026-10-25T06:01:00.000Z",
-    "status": "paid",
-    "customer": {
-      "name": "Julien Meyer",
-      "address": "12 rue des Baobabs",
-      "postalCode": "74007",
-      "city": "Strasbourg",
-      "country": "France",
-      "email": "client7@demo.fr"
+    {
+        "id":  "TS-UZNNKL",
+        "createdAt":  "2026-10-25T06:01:00.000Z",
+        "status":  "paid",
+        "customer":  {
+                         "name":  "Julien Meyer",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "74007",
+                         "city":  "Strasbourg",
+                         "country":  "France",
+                         "email":  "client7@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "robusta-toamasina",
+                          "name":  {
+                                       "fr":  "Robusta Bleu de Toamasina",
+                                       "en":  "Robusta Bleu de Toamasina"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "filtre",
+                          "qty":  1,
+                          "unitPrice":  38.5,
+                          "lineTotal":  38.5,
+                          "accent":  "#9A6B3F"
+                      },
+                      {
+                          "productId":  "bourbon-pointu",
+                          "name":  {
+                                       "fr":  "Bourbon Pointu",
+                                       "en":  "Bourbon Pointu"
+                                   },
+                          "format":  "s250",
+                          "grind":  "piston",
+                          "qty":  4,
+                          "unitPrice":  24.9,
+                          "lineTotal":  99.6,
+                          "accent":  "#C07A3A"
+                      }
+                  ],
+        "promoCode":  "BIENVENUE10",
+        "subtotal":  138.1,
+        "discount":  13.81,
+        "shipping":  0,
+        "total":  124.29,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033097_6",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "robusta-toamasina",
-        "name": {
-          "fr": "Robusta Bleu de Toamasina",
-          "en": "Robusta Bleu de Toamasina"
-        },
-        "format": "s1000",
-        "grind": "filtre",
-        "qty": 1,
-        "unitPrice": 38.5,
-        "lineTotal": 38.5,
-        "accent": "#9A6B3F"
-      },
-      {
-        "productId": "bourbon-pointu",
-        "name": {
-          "fr": "Bourbon Pointu",
-          "en": "Bourbon Pointu"
-        },
-        "format": "s250",
-        "grind": "piston",
-        "qty": 4,
-        "unitPrice": 24.9,
-        "lineTotal": 99.6,
-        "accent": "#C07A3A"
-      }
-    ],
-    "promoCode": "BIENVENUE10",
-    "subtotal": 138.1,
-    "discount": 13.81,
-    "shipping": 0,
-    "total": 124.29,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033097_6",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-CB86EY",
-    "createdAt": "2026-10-01T09:46:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Emma Petit",
-      "address": "12 rue des Baobabs",
-      "postalCode": "75008",
-      "city": "Genève",
-      "country": "France",
-      "email": "client8@demo.fr"
+    {
+        "id":  "TS-CB86EY",
+        "createdAt":  "2026-10-01T09:46:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Emma Petit",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "75008",
+                         "city":  "GenÃ¨ve",
+                         "country":  "France",
+                         "email":  "client8@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "fianarantsoa-bio",
+                          "name":  {
+                                       "fr":  "Hauts Plateaux Bio",
+                                       "en":  "Hauts Plateaux Bio"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "moka",
+                          "qty":  1,
+                          "unitPrice":  52,
+                          "lineTotal":  52,
+                          "accent":  "#6B7F5E"
+                      },
+                      {
+                          "productId":  "vanille-antalaha",
+                          "name":  {
+                                       "fr":  "Vanille dâ€™Antalaha",
+                                       "en":  "Vanille dâ€™Antalaha"
+                                   },
+                          "format":  "s250",
+                          "grind":  "espresso",
+                          "qty":  3,
+                          "unitPrice":  12.5,
+                          "lineTotal":  37.5,
+                          "accent":  "#C8955C"
+                      },
+                      {
+                          "productId":  "robusta-toamasina",
+                          "name":  {
+                                       "fr":  "Robusta Bleu de Toamasina",
+                                       "en":  "Robusta Bleu de Toamasina"
+                                   },
+                          "format":  "s250",
+                          "grind":  "piston",
+                          "qty":  1,
+                          "unitPrice":  10.9,
+                          "lineTotal":  10.9,
+                          "accent":  "#9A6B3F"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  100.4,
+        "discount":  0,
+        "shipping":  0,
+        "total":  100.4,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033097_7",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "fianarantsoa-bio",
-        "name": {
-          "fr": "Hauts Plateaux Bio",
-          "en": "Hauts Plateaux Bio"
-        },
-        "format": "s1000",
-        "grind": "moka",
-        "qty": 1,
-        "unitPrice": 52,
-        "lineTotal": 52,
-        "accent": "#6B7F5E"
-      },
-      {
-        "productId": "vanille-antalaha",
-        "name": {
-          "fr": "Vanille d’Antalaha",
-          "en": "Vanille d’Antalaha"
-        },
-        "format": "s250",
-        "grind": "espresso",
-        "qty": 3,
-        "unitPrice": 12.5,
-        "lineTotal": 37.5,
-        "accent": "#C8955C"
-      },
-      {
-        "productId": "robusta-toamasina",
-        "name": {
-          "fr": "Robusta Bleu de Toamasina",
-          "en": "Robusta Bleu de Toamasina"
-        },
-        "format": "s250",
-        "grind": "piston",
-        "qty": 1,
-        "unitPrice": 10.9,
-        "lineTotal": 10.9,
-        "accent": "#9A6B3F"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 100.4,
-    "discount": 0,
-    "shipping": 0,
-    "total": 100.4,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033097_7",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-ZXBZEB",
-    "createdAt": "2026-10-06T10:00:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Tovo Andriamampianina",
-      "address": "12 rue des Baobabs",
-      "postalCode": "76001",
-      "city": "Antsirabe",
-      "country": "France",
-      "email": "client9@demo.fr"
+    {
+        "id":  "TS-ZXBZEB",
+        "createdAt":  "2026-10-06T10:00:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Tovo Andriamampianina",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "76001",
+                         "city":  "Antsirabe",
+                         "country":  "France",
+                         "email":  "client9@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "coffret-prestige",
+                          "name":  {
+                                       "fr":  "Coffret Prestige",
+                                       "en":  "Coffret Prestige"
+                                   },
+                          "format":  "coffret",
+                          "grind":  null,
+                          "qty":  1,
+                          "unitPrice":  59.9,
+                          "lineTotal":  59.9,
+                          "accent":  "#8A5A32"
+                      },
+                      {
+                          "productId":  "ambanja-grand-cru",
+                          "name":  {
+                                       "fr":  "Ambanja Grand Cru",
+                                       "en":  "Ambanja Grand Cru"
+                                   },
+                          "format":  "s250",
+                          "grind":  "grains",
+                          "qty":  3,
+                          "unitPrice":  12.9,
+                          "lineTotal":  38.7,
+                          "accent":  "#8A5A32"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  98.6,
+        "discount":  0,
+        "shipping":  0,
+        "total":  98.6,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033097_8",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "coffret-prestige",
-        "name": {
-          "fr": "Coffret Prestige",
-          "en": "Coffret Prestige"
-        },
-        "format": "coffret",
-        "grind": null,
-        "qty": 1,
-        "unitPrice": 59.9,
-        "lineTotal": 59.9,
-        "accent": "#8A5A32"
-      },
-      {
-        "productId": "ambanja-grand-cru",
-        "name": {
-          "fr": "Ambanja Grand Cru",
-          "en": "Ambanja Grand Cru"
-        },
-        "format": "s250",
-        "grind": "grains",
-        "qty": 3,
-        "unitPrice": 12.9,
-        "lineTotal": 38.7,
-        "accent": "#8A5A32"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 98.6,
-    "discount": 0,
-    "shipping": 0,
-    "total": 98.6,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033097_8",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-E5H86H",
-    "createdAt": "2026-10-26T10:16:00.000Z",
-    "status": "preparing",
-    "customer": {
-      "name": "Lucile Moreau",
-      "address": "12 rue des Baobabs",
-      "postalCode": "68002",
-      "city": "Lille",
-      "country": "France",
-      "email": "client10@demo.fr"
+    {
+        "id":  "TS-E5H86H",
+        "createdAt":  "2026-10-26T10:16:00.000Z",
+        "status":  "preparing",
+        "customer":  {
+                         "name":  "Lucile Moreau",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "68002",
+                         "city":  "Lille",
+                         "country":  "France",
+                         "email":  "client10@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "coffret-prestige",
+                          "name":  {
+                                       "fr":  "Coffret Prestige",
+                                       "en":  "Coffret Prestige"
+                                   },
+                          "format":  "coffret",
+                          "grind":  null,
+                          "qty":  3,
+                          "unitPrice":  59.9,
+                          "lineTotal":  179.7,
+                          "accent":  "#8A5A32"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  179.7,
+        "discount":  0,
+        "shipping":  0,
+        "total":  179.7,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033097_9",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "coffret-prestige",
-        "name": {
-          "fr": "Coffret Prestige",
-          "en": "Coffret Prestige"
-        },
-        "format": "coffret",
-        "grind": null,
-        "qty": 3,
-        "unitPrice": 59.9,
-        "lineTotal": 179.7,
-        "accent": "#8A5A32"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 179.7,
-    "discount": 0,
-    "shipping": 0,
-    "total": 179.7,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033097_9",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-3HQ3G3",
-    "createdAt": "2026-10-09T10:31:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Paulo Costa",
-      "address": "12 rue des Baobabs",
-      "postalCode": "69003",
-      "city": "Luxembourg",
-      "country": "France",
-      "email": "client11@demo.fr"
+    {
+        "id":  "TS-3HQ3G3",
+        "createdAt":  "2026-10-09T10:31:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Paulo Costa",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "69003",
+                         "city":  "Luxembourg",
+                         "country":  "France",
+                         "email":  "client11@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "vanille-antalaha",
+                          "name":  {
+                                       "fr":  "Vanille dâ€™Antalaha",
+                                       "en":  "Vanille dâ€™Antalaha"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "filtre",
+                          "qty":  1,
+                          "unitPrice":  44,
+                          "lineTotal":  44,
+                          "accent":  "#C8955C"
+                      },
+                      {
+                          "productId":  "fianarantsoa-bio",
+                          "name":  {
+                                       "fr":  "Hauts Plateaux Bio",
+                                       "en":  "Hauts Plateaux Bio"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "espresso",
+                          "qty":  5,
+                          "unitPrice":  52,
+                          "lineTotal":  260,
+                          "accent":  "#6B7F5E"
+                      },
+                      {
+                          "productId":  "andasibe-floral",
+                          "name":  {
+                                       "fr":  "VallÃ©e dâ€™Andasibe",
+                                       "en":  "VallÃ©e dâ€™Andasibe"
+                                   },
+                          "format":  "s250",
+                          "grind":  "espresso",
+                          "qty":  3,
+                          "unitPrice":  13.5,
+                          "lineTotal":  40.5,
+                          "accent":  "#B08A5A"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  344.5,
+        "discount":  0,
+        "shipping":  0,
+        "total":  344.5,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033097_10",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "vanille-antalaha",
-        "name": {
-          "fr": "Vanille d’Antalaha",
-          "en": "Vanille d’Antalaha"
-        },
-        "format": "s1000",
-        "grind": "filtre",
-        "qty": 1,
-        "unitPrice": 44,
-        "lineTotal": 44,
-        "accent": "#C8955C"
-      },
-      {
-        "productId": "fianarantsoa-bio",
-        "name": {
-          "fr": "Hauts Plateaux Bio",
-          "en": "Hauts Plateaux Bio"
-        },
-        "format": "s1000",
-        "grind": "espresso",
-        "qty": 5,
-        "unitPrice": 52,
-        "lineTotal": 260,
-        "accent": "#6B7F5E"
-      },
-      {
-        "productId": "andasibe-floral",
-        "name": {
-          "fr": "Vallée d’Andasibe",
-          "en": "Vallée d’Andasibe"
-        },
-        "format": "s250",
-        "grind": "espresso",
-        "qty": 3,
-        "unitPrice": 13.5,
-        "lineTotal": 40.5,
-        "accent": "#B08A5A"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 344.5,
-    "discount": 0,
-    "shipping": 0,
-    "total": 344.5,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033097_10",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-PK5Z53",
-    "createdAt": "2026-10-19T13:23:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Hélène Girard",
-      "address": "12 rue des Baobabs",
-      "postalCode": "70004",
-      "city": "Nantes",
-      "country": "France",
-      "email": "client12@demo.fr"
+    {
+        "id":  "TS-PK5Z53",
+        "createdAt":  "2026-10-19T13:23:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "HÃ©lÃ¨ne Girard",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "70004",
+                         "city":  "Nantes",
+                         "country":  "France",
+                         "email":  "client12@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "andasibe-floral",
+                          "name":  {
+                                       "fr":  "VallÃ©e dâ€™Andasibe",
+                                       "en":  "VallÃ©e dâ€™Andasibe"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "filtre",
+                          "qty":  1,
+                          "unitPrice":  47.5,
+                          "lineTotal":  47.5,
+                          "accent":  "#B08A5A"
+                      },
+                      {
+                          "productId":  "bourbon-pointu",
+                          "name":  {
+                                       "fr":  "Bourbon Pointu",
+                                       "en":  "Bourbon Pointu"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "grains",
+                          "qty":  1,
+                          "unitPrice":  89,
+                          "lineTotal":  89,
+                          "accent":  "#C07A3A"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  136.5,
+        "discount":  0,
+        "shipping":  0,
+        "total":  136.5,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033097_11",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "andasibe-floral",
-        "name": {
-          "fr": "Vallée d’Andasibe",
-          "en": "Vallée d’Andasibe"
-        },
-        "format": "s1000",
-        "grind": "filtre",
-        "qty": 1,
-        "unitPrice": 47.5,
-        "lineTotal": 47.5,
-        "accent": "#B08A5A"
-      },
-      {
-        "productId": "bourbon-pointu",
-        "name": {
-          "fr": "Bourbon Pointu",
-          "en": "Bourbon Pointu"
-        },
-        "format": "s1000",
-        "grind": "grains",
-        "qty": 1,
-        "unitPrice": 89,
-        "lineTotal": 89,
-        "accent": "#C07A3A"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 136.5,
-    "discount": 0,
-    "shipping": 0,
-    "total": 136.5,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033097_11",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-ZLSSVN",
-    "createdAt": "2026-10-21T11:15:00.000Z",
-    "status": "preparing",
-    "customer": {
-      "name": "Nadia Rasoanaivo",
-      "address": "12 rue des Baobabs",
-      "postalCode": "71005",
-      "city": "Antananarivo",
-      "country": "France",
-      "email": "client13@demo.fr"
+    {
+        "id":  "TS-ZLSSVN",
+        "createdAt":  "2026-10-21T11:15:00.000Z",
+        "status":  "preparing",
+        "customer":  {
+                         "name":  "Nadia Rasoanaivo",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "71005",
+                         "city":  "Antananarivo",
+                         "country":  "France",
+                         "email":  "client13@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "plateaux-antsirabe",
+                          "name":  {
+                                       "fr":  "Plateaux dâ€™Antsirabe",
+                                       "en":  "Plateaux dâ€™Antsirabe"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "piston",
+                          "qty":  2,
+                          "unitPrice":  42.5,
+                          "lineTotal":  85,
+                          "accent":  "#A57C43"
+                      },
+                      {
+                          "productId":  "cacao-sauvage",
+                          "name":  {
+                                       "fr":  "Cacao Sauvage",
+                                       "en":  "Cacao Sauvage"
+                                   },
+                          "format":  "s250",
+                          "grind":  "filtre",
+                          "qty":  2,
+                          "unitPrice":  11.5,
+                          "lineTotal":  23,
+                          "accent":  "#5A4232"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  108,
+        "discount":  0,
+        "shipping":  0,
+        "total":  108,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033097_12",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "plateaux-antsirabe",
-        "name": {
-          "fr": "Plateaux d’Antsirabe",
-          "en": "Plateaux d’Antsirabe"
-        },
-        "format": "s1000",
-        "grind": "piston",
-        "qty": 2,
-        "unitPrice": 42.5,
-        "lineTotal": 85,
-        "accent": "#A57C43"
-      },
-      {
-        "productId": "cacao-sauvage",
-        "name": {
-          "fr": "Cacao Sauvage",
-          "en": "Cacao Sauvage"
-        },
-        "format": "s250",
-        "grind": "filtre",
-        "qty": 2,
-        "unitPrice": 11.5,
-        "lineTotal": 23,
-        "accent": "#5A4232"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 108,
-    "discount": 0,
-    "shipping": 0,
-    "total": 108,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033097_12",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-3SDNBZ",
-    "createdAt": "2026-10-01T10:42:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Marc Delaunay",
-      "address": "12 rue des Baobabs",
-      "postalCode": "72006",
-      "city": "Lyon",
-      "country": "France",
-      "email": "client14@demo.fr"
+    {
+        "id":  "TS-3SDNBZ",
+        "createdAt":  "2026-10-01T10:42:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Marc Delaunay",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "72006",
+                         "city":  "Lyon",
+                         "country":  "France",
+                         "email":  "client14@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "plateaux-antsirabe",
+                          "name":  {
+                                       "fr":  "Plateaux dâ€™Antsirabe",
+                                       "en":  "Plateaux dâ€™Antsirabe"
+                                   },
+                          "format":  "s250",
+                          "grind":  "espresso",
+                          "qty":  1,
+                          "unitPrice":  11.9,
+                          "lineTotal":  11.9,
+                          "accent":  "#A57C43"
+                      },
+                      {
+                          "productId":  "robusta-toamasina",
+                          "name":  {
+                                       "fr":  "Robusta Bleu de Toamasina",
+                                       "en":  "Robusta Bleu de Toamasina"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "piston",
+                          "qty":  5,
+                          "unitPrice":  38.5,
+                          "lineTotal":  192.5,
+                          "accent":  "#9A6B3F"
+                      },
+                      {
+                          "productId":  "cacao-sauvage",
+                          "name":  {
+                                       "fr":  "Cacao Sauvage",
+                                       "en":  "Cacao Sauvage"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "piston",
+                          "qty":  2,
+                          "unitPrice":  40,
+                          "lineTotal":  80,
+                          "accent":  "#5A4232"
+                      }
+                  ],
+        "promoCode":  "BIENVENUE10",
+        "subtotal":  284.4,
+        "discount":  28.44,
+        "shipping":  0,
+        "total":  255.96,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033097_13",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "plateaux-antsirabe",
-        "name": {
-          "fr": "Plateaux d’Antsirabe",
-          "en": "Plateaux d’Antsirabe"
-        },
-        "format": "s250",
-        "grind": "espresso",
-        "qty": 1,
-        "unitPrice": 11.9,
-        "lineTotal": 11.9,
-        "accent": "#A57C43"
-      },
-      {
-        "productId": "robusta-toamasina",
-        "name": {
-          "fr": "Robusta Bleu de Toamasina",
-          "en": "Robusta Bleu de Toamasina"
-        },
-        "format": "s1000",
-        "grind": "piston",
-        "qty": 5,
-        "unitPrice": 38.5,
-        "lineTotal": 192.5,
-        "accent": "#9A6B3F"
-      },
-      {
-        "productId": "cacao-sauvage",
-        "name": {
-          "fr": "Cacao Sauvage",
-          "en": "Cacao Sauvage"
-        },
-        "format": "s1000",
-        "grind": "piston",
-        "qty": 2,
-        "unitPrice": 40,
-        "lineTotal": 80,
-        "accent": "#5A4232"
-      }
-    ],
-    "promoCode": "BIENVENUE10",
-    "subtotal": 284.4,
-    "discount": 28.44,
-    "shipping": 0,
-    "total": 255.96,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033097_13",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-9AFCR8",
-    "createdAt": "2026-10-08T12:07:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Zoé Mercier",
-      "address": "12 rue des Baobabs",
-      "postalCode": "73007",
-      "city": "Bruxelles",
-      "country": "France",
-      "email": "client15@demo.fr"
+    {
+        "id":  "TS-9AFCR8",
+        "createdAt":  "2026-10-08T12:07:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "ZoÃ© Mercier",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "73007",
+                         "city":  "Bruxelles",
+                         "country":  "France",
+                         "email":  "client15@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "coffret-prestige",
+                          "name":  {
+                                       "fr":  "Coffret Prestige",
+                                       "en":  "Coffret Prestige"
+                                   },
+                          "format":  "coffret",
+                          "grind":  null,
+                          "qty":  3,
+                          "unitPrice":  59.9,
+                          "lineTotal":  179.7,
+                          "accent":  "#8A5A32"
+                      },
+                      {
+                          "productId":  "bourbon-pointu",
+                          "name":  {
+                                       "fr":  "Bourbon Pointu",
+                                       "en":  "Bourbon Pointu"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "grains",
+                          "qty":  3,
+                          "unitPrice":  89,
+                          "lineTotal":  267,
+                          "accent":  "#C07A3A"
+                      },
+                      {
+                          "productId":  "plateaux-antsirabe",
+                          "name":  {
+                                       "fr":  "Plateaux dâ€™Antsirabe",
+                                       "en":  "Plateaux dâ€™Antsirabe"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "piston",
+                          "qty":  2,
+                          "unitPrice":  42.5,
+                          "lineTotal":  85,
+                          "accent":  "#A57C43"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  531.7,
+        "discount":  0,
+        "shipping":  0,
+        "total":  531.7,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033097_14",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "coffret-prestige",
-        "name": {
-          "fr": "Coffret Prestige",
-          "en": "Coffret Prestige"
-        },
-        "format": "coffret",
-        "grind": null,
-        "qty": 3,
-        "unitPrice": 59.9,
-        "lineTotal": 179.7,
-        "accent": "#8A5A32"
-      },
-      {
-        "productId": "bourbon-pointu",
-        "name": {
-          "fr": "Bourbon Pointu",
-          "en": "Bourbon Pointu"
-        },
-        "format": "s1000",
-        "grind": "grains",
-        "qty": 3,
-        "unitPrice": 89,
-        "lineTotal": 267,
-        "accent": "#C07A3A"
-      },
-      {
-        "productId": "plateaux-antsirabe",
-        "name": {
-          "fr": "Plateaux d’Antsirabe",
-          "en": "Plateaux d’Antsirabe"
-        },
-        "format": "s1000",
-        "grind": "piston",
-        "qty": 2,
-        "unitPrice": 42.5,
-        "lineTotal": 85,
-        "accent": "#A57C43"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 531.7,
-    "discount": 0,
-    "shipping": 0,
-    "total": 531.7,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033097_14",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-5THPJ8",
-    "createdAt": "2026-10-09T11:42:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Léo Bernard",
-      "address": "12 rue des Baobabs",
-      "postalCode": "74008",
-      "city": "Paris",
-      "country": "France",
-      "email": "client16@demo.fr"
+    {
+        "id":  "TS-5THPJ8",
+        "createdAt":  "2026-10-09T11:42:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "LÃ©o Bernard",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "74008",
+                         "city":  "Paris",
+                         "country":  "France",
+                         "email":  "client16@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "coffret-decouverte",
+                          "name":  {
+                                       "fr":  "Coffret DÃ©couverte",
+                                       "en":  "Coffret DÃ©couverte"
+                                   },
+                          "format":  "coffret",
+                          "grind":  null,
+                          "qty":  6,
+                          "unitPrice":  39.9,
+                          "lineTotal":  239.4,
+                          "accent":  "#C07A3A"
+                      },
+                      {
+                          "productId":  "bourbon-pointu",
+                          "name":  {
+                                       "fr":  "Bourbon Pointu",
+                                       "en":  "Bourbon Pointu"
+                                   },
+                          "format":  "s250",
+                          "grind":  "moka",
+                          "qty":  5,
+                          "unitPrice":  24.9,
+                          "lineTotal":  124.5,
+                          "accent":  "#C07A3A"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  363.9,
+        "discount":  0,
+        "shipping":  0,
+        "total":  363.9,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033098_15",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "coffret-decouverte",
-        "name": {
-          "fr": "Coffret Découverte",
-          "en": "Coffret Découverte"
-        },
-        "format": "coffret",
-        "grind": null,
-        "qty": 6,
-        "unitPrice": 39.9,
-        "lineTotal": 239.4,
-        "accent": "#C07A3A"
-      },
-      {
-        "productId": "bourbon-pointu",
-        "name": {
-          "fr": "Bourbon Pointu",
-          "en": "Bourbon Pointu"
-        },
-        "format": "s250",
-        "grind": "moka",
-        "qty": 5,
-        "unitPrice": 24.9,
-        "lineTotal": 124.5,
-        "accent": "#C07A3A"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 363.9,
-    "discount": 0,
-    "shipping": 0,
-    "total": 363.9,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033098_15",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-WHGN48",
-    "createdAt": "2026-10-26T05:44:00.000Z",
-    "status": "preparing",
-    "customer": {
-      "name": "Claire Fontaine",
-      "address": "12 rue des Baobabs",
-      "postalCode": "75001",
-      "city": "Bordeaux",
-      "country": "France",
-      "email": "client17@demo.fr"
+    {
+        "id":  "TS-WHGN48",
+        "createdAt":  "2026-10-26T05:44:00.000Z",
+        "status":  "preparing",
+        "customer":  {
+                         "name":  "Claire Fontaine",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "75001",
+                         "city":  "Bordeaux",
+                         "country":  "France",
+                         "email":  "client17@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "robusta-toamasina",
+                          "name":  {
+                                       "fr":  "Robusta Bleu de Toamasina",
+                                       "en":  "Robusta Bleu de Toamasina"
+                                   },
+                          "format":  "s250",
+                          "grind":  "espresso",
+                          "qty":  3,
+                          "unitPrice":  10.9,
+                          "lineTotal":  32.7,
+                          "accent":  "#9A6B3F"
+                      }
+                  ],
+        "promoCode":  "BIENVENUE10",
+        "subtotal":  32.7,
+        "discount":  3.27,
+        "shipping":  6.9,
+        "total":  36.33,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033098_16",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "robusta-toamasina",
-        "name": {
-          "fr": "Robusta Bleu de Toamasina",
-          "en": "Robusta Bleu de Toamasina"
-        },
-        "format": "s250",
-        "grind": "espresso",
-        "qty": 3,
-        "unitPrice": 10.9,
-        "lineTotal": 32.7,
-        "accent": "#9A6B3F"
-      }
-    ],
-    "promoCode": "BIENVENUE10",
-    "subtotal": 32.7,
-    "discount": 3.27,
-    "shipping": 6.9,
-    "total": 36.33,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033098_16",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-Q4Y9NL",
-    "createdAt": "2026-10-27T11:27:00.000Z",
-    "status": "paid",
-    "customer": {
-      "name": "Ando Rakotondrabe",
-      "address": "12 rue des Baobabs",
-      "postalCode": "76002",
-      "city": "Toamasina",
-      "country": "France",
-      "email": "client18@demo.fr"
+    {
+        "id":  "TS-Q4Y9NL",
+        "createdAt":  "2026-10-27T11:27:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Ando Rakotondrabe",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "76002",
+                         "city":  "Toamasina",
+                         "country":  "France",
+                         "email":  "client18@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "vanille-antalaha",
+                          "name":  {
+                                       "fr":  "Vanille dâ€™Antalaha",
+                                       "en":  "Vanille dâ€™Antalaha"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "filtre",
+                          "qty":  1,
+                          "unitPrice":  44,
+                          "lineTotal":  44,
+                          "accent":  "#C8955C"
+                      },
+                      {
+                          "productId":  "ambanja-grand-cru",
+                          "name":  {
+                                       "fr":  "Ambanja Grand Cru",
+                                       "en":  "Ambanja Grand Cru"
+                                   },
+                          "format":  "s250",
+                          "grind":  "grains",
+                          "qty":  2,
+                          "unitPrice":  12.9,
+                          "lineTotal":  25.8,
+                          "accent":  "#8A5A32"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  69.8,
+        "discount":  0,
+        "shipping":  0,
+        "total":  69.8,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033098_17",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "vanille-antalaha",
-        "name": {
-          "fr": "Vanille d’Antalaha",
-          "en": "Vanille d’Antalaha"
-        },
-        "format": "s1000",
-        "grind": "filtre",
-        "qty": 1,
-        "unitPrice": 44,
-        "lineTotal": 44,
-        "accent": "#C8955C"
-      },
-      {
-        "productId": "ambanja-grand-cru",
-        "name": {
-          "fr": "Ambanja Grand Cru",
-          "en": "Ambanja Grand Cru"
-        },
-        "format": "s250",
-        "grind": "grains",
-        "qty": 2,
-        "unitPrice": 12.9,
-        "lineTotal": 25.8,
-        "accent": "#8A5A32"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 69.8,
-    "discount": 0,
-    "shipping": 0,
-    "total": 69.8,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033098_17",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-ZDN656",
-    "createdAt": "2026-10-20T12:36:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Julien Meyer",
-      "address": "12 rue des Baobabs",
-      "postalCode": "68003",
-      "city": "Strasbourg",
-      "country": "France",
-      "email": "client19@demo.fr"
+    {
+        "id":  "TS-ZDN656",
+        "createdAt":  "2026-10-20T12:36:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Julien Meyer",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "68003",
+                         "city":  "Strasbourg",
+                         "country":  "France",
+                         "email":  "client19@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "bourbon-pointu",
+                          "name":  {
+                                       "fr":  "Bourbon Pointu",
+                                       "en":  "Bourbon Pointu"
+                                   },
+                          "format":  "s250",
+                          "grind":  "piston",
+                          "qty":  1,
+                          "unitPrice":  24.9,
+                          "lineTotal":  24.9,
+                          "accent":  "#C07A3A"
+                      },
+                      {
+                          "productId":  "cacao-sauvage",
+                          "name":  {
+                                       "fr":  "Cacao Sauvage",
+                                       "en":  "Cacao Sauvage"
+                                   },
+                          "format":  "s250",
+                          "grind":  "espresso",
+                          "qty":  2,
+                          "unitPrice":  11.5,
+                          "lineTotal":  23,
+                          "accent":  "#5A4232"
+                      },
+                      {
+                          "productId":  "vanille-antalaha",
+                          "name":  {
+                                       "fr":  "Vanille dâ€™Antalaha",
+                                       "en":  "Vanille dâ€™Antalaha"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "espresso",
+                          "qty":  4,
+                          "unitPrice":  44,
+                          "lineTotal":  176,
+                          "accent":  "#C8955C"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  223.9,
+        "discount":  0,
+        "shipping":  0,
+        "total":  223.9,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033098_18",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "bourbon-pointu",
-        "name": {
-          "fr": "Bourbon Pointu",
-          "en": "Bourbon Pointu"
-        },
-        "format": "s250",
-        "grind": "piston",
-        "qty": 1,
-        "unitPrice": 24.9,
-        "lineTotal": 24.9,
-        "accent": "#C07A3A"
-      },
-      {
-        "productId": "cacao-sauvage",
-        "name": {
-          "fr": "Cacao Sauvage",
-          "en": "Cacao Sauvage"
-        },
-        "format": "s250",
-        "grind": "espresso",
-        "qty": 2,
-        "unitPrice": 11.5,
-        "lineTotal": 23,
-        "accent": "#5A4232"
-      },
-      {
-        "productId": "vanille-antalaha",
-        "name": {
-          "fr": "Vanille d’Antalaha",
-          "en": "Vanille d’Antalaha"
-        },
-        "format": "s1000",
-        "grind": "espresso",
-        "qty": 4,
-        "unitPrice": 44,
-        "lineTotal": 176,
-        "accent": "#C8955C"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 223.9,
-    "discount": 0,
-    "shipping": 0,
-    "total": 223.9,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033098_18",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-2GWEF8",
-    "createdAt": "2026-10-23T09:29:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Emma Petit",
-      "address": "12 rue des Baobabs",
-      "postalCode": "69004",
-      "city": "Genève",
-      "country": "France",
-      "email": "client20@demo.fr"
+    {
+        "id":  "TS-2GWEF8",
+        "createdAt":  "2026-10-23T09:29:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Emma Petit",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "69004",
+                         "city":  "GenÃ¨ve",
+                         "country":  "France",
+                         "email":  "client20@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "plateaux-antsirabe",
+                          "name":  {
+                                       "fr":  "Plateaux dâ€™Antsirabe",
+                                       "en":  "Plateaux dâ€™Antsirabe"
+                                   },
+                          "format":  "s250",
+                          "grind":  "moka",
+                          "qty":  2,
+                          "unitPrice":  11.9,
+                          "lineTotal":  23.8,
+                          "accent":  "#A57C43"
+                      }
+                  ],
+        "promoCode":  "BIENVENUE10",
+        "subtotal":  23.8,
+        "discount":  2.38,
+        "shipping":  6.9,
+        "total":  28.32,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033098_19",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "plateaux-antsirabe",
-        "name": {
-          "fr": "Plateaux d’Antsirabe",
-          "en": "Plateaux d’Antsirabe"
-        },
-        "format": "s250",
-        "grind": "moka",
-        "qty": 2,
-        "unitPrice": 11.9,
-        "lineTotal": 23.8,
-        "accent": "#A57C43"
-      }
-    ],
-    "promoCode": "BIENVENUE10",
-    "subtotal": 23.8,
-    "discount": 2.38,
-    "shipping": 6.9,
-    "total": 28.32,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033098_19",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-FM7C93",
-    "createdAt": "2026-10-13T09:47:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Tovo Andriamampianina",
-      "address": "12 rue des Baobabs",
-      "postalCode": "70005",
-      "city": "Antsirabe",
-      "country": "France",
-      "email": "client21@demo.fr"
+    {
+        "id":  "TS-FM7C93",
+        "createdAt":  "2026-10-13T09:47:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Tovo Andriamampianina",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "70005",
+                         "city":  "Antsirabe",
+                         "country":  "France",
+                         "email":  "client21@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "fianarantsoa-bio",
+                          "name":  {
+                                       "fr":  "Hauts Plateaux Bio",
+                                       "en":  "Hauts Plateaux Bio"
+                                   },
+                          "format":  "s250",
+                          "grind":  "espresso",
+                          "qty":  2,
+                          "unitPrice":  14.9,
+                          "lineTotal":  29.8,
+                          "accent":  "#6B7F5E"
+                      },
+                      {
+                          "productId":  "ambanja-grand-cru",
+                          "name":  {
+                                       "fr":  "Ambanja Grand Cru",
+                                       "en":  "Ambanja Grand Cru"
+                                   },
+                          "format":  "s250",
+                          "grind":  "filtre",
+                          "qty":  5,
+                          "unitPrice":  12.9,
+                          "lineTotal":  64.5,
+                          "accent":  "#8A5A32"
+                      },
+                      {
+                          "productId":  "bourbon-pointu",
+                          "name":  {
+                                       "fr":  "Bourbon Pointu",
+                                       "en":  "Bourbon Pointu"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "moka",
+                          "qty":  3,
+                          "unitPrice":  89,
+                          "lineTotal":  267,
+                          "accent":  "#C07A3A"
+                      }
+                  ],
+        "promoCode":  "BIENVENUE10",
+        "subtotal":  361.3,
+        "discount":  36.13,
+        "shipping":  0,
+        "total":  325.17,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033098_20",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "fianarantsoa-bio",
-        "name": {
-          "fr": "Hauts Plateaux Bio",
-          "en": "Hauts Plateaux Bio"
-        },
-        "format": "s250",
-        "grind": "espresso",
-        "qty": 2,
-        "unitPrice": 14.9,
-        "lineTotal": 29.8,
-        "accent": "#6B7F5E"
-      },
-      {
-        "productId": "ambanja-grand-cru",
-        "name": {
-          "fr": "Ambanja Grand Cru",
-          "en": "Ambanja Grand Cru"
-        },
-        "format": "s250",
-        "grind": "filtre",
-        "qty": 5,
-        "unitPrice": 12.9,
-        "lineTotal": 64.5,
-        "accent": "#8A5A32"
-      },
-      {
-        "productId": "bourbon-pointu",
-        "name": {
-          "fr": "Bourbon Pointu",
-          "en": "Bourbon Pointu"
-        },
-        "format": "s1000",
-        "grind": "moka",
-        "qty": 3,
-        "unitPrice": 89,
-        "lineTotal": 267,
-        "accent": "#C07A3A"
-      }
-    ],
-    "promoCode": "BIENVENUE10",
-    "subtotal": 361.3,
-    "discount": 36.13,
-    "shipping": 0,
-    "total": 325.17,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033098_20",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-FJTWPG",
-    "createdAt": "2026-09-28T05:16:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Lucile Moreau",
-      "address": "12 rue des Baobabs",
-      "postalCode": "71006",
-      "city": "Lille",
-      "country": "France",
-      "email": "client22@demo.fr"
+    {
+        "id":  "TS-FJTWPG",
+        "createdAt":  "2026-09-28T05:16:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Lucile Moreau",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "71006",
+                         "city":  "Lille",
+                         "country":  "France",
+                         "email":  "client22@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "fianarantsoa-bio",
+                          "name":  {
+                                       "fr":  "Hauts Plateaux Bio",
+                                       "en":  "Hauts Plateaux Bio"
+                                   },
+                          "format":  "s250",
+                          "grind":  "filtre",
+                          "qty":  2,
+                          "unitPrice":  14.9,
+                          "lineTotal":  29.8,
+                          "accent":  "#6B7F5E"
+                      },
+                      {
+                          "productId":  "ambanja-grand-cru",
+                          "name":  {
+                                       "fr":  "Ambanja Grand Cru",
+                                       "en":  "Ambanja Grand Cru"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "piston",
+                          "qty":  1,
+                          "unitPrice":  45,
+                          "lineTotal":  45,
+                          "accent":  "#8A5A32"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  74.8,
+        "discount":  0,
+        "shipping":  0,
+        "total":  74.8,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033098_21",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "fianarantsoa-bio",
-        "name": {
-          "fr": "Hauts Plateaux Bio",
-          "en": "Hauts Plateaux Bio"
-        },
-        "format": "s250",
-        "grind": "filtre",
-        "qty": 2,
-        "unitPrice": 14.9,
-        "lineTotal": 29.8,
-        "accent": "#6B7F5E"
-      },
-      {
-        "productId": "ambanja-grand-cru",
-        "name": {
-          "fr": "Ambanja Grand Cru",
-          "en": "Ambanja Grand Cru"
-        },
-        "format": "s1000",
-        "grind": "piston",
-        "qty": 1,
-        "unitPrice": 45,
-        "lineTotal": 45,
-        "accent": "#8A5A32"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 74.8,
-    "discount": 0,
-    "shipping": 0,
-    "total": 74.8,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033098_21",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-545RAA",
-    "createdAt": "2026-10-08T05:40:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Paulo Costa",
-      "address": "12 rue des Baobabs",
-      "postalCode": "72007",
-      "city": "Luxembourg",
-      "country": "France",
-      "email": "client23@demo.fr"
+    {
+        "id":  "TS-545RAA",
+        "createdAt":  "2026-10-08T05:40:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Paulo Costa",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "72007",
+                         "city":  "Luxembourg",
+                         "country":  "France",
+                         "email":  "client23@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "andasibe-floral",
+                          "name":  {
+                                       "fr":  "VallÃ©e dâ€™Andasibe",
+                                       "en":  "VallÃ©e dâ€™Andasibe"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "moka",
+                          "qty":  3,
+                          "unitPrice":  47.5,
+                          "lineTotal":  142.5,
+                          "accent":  "#B08A5A"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  142.5,
+        "discount":  0,
+        "shipping":  0,
+        "total":  142.5,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033098_22",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "andasibe-floral",
-        "name": {
-          "fr": "Vallée d’Andasibe",
-          "en": "Vallée d’Andasibe"
-        },
-        "format": "s1000",
-        "grind": "moka",
-        "qty": 3,
-        "unitPrice": 47.5,
-        "lineTotal": 142.5,
-        "accent": "#B08A5A"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 142.5,
-    "discount": 0,
-    "shipping": 0,
-    "total": 142.5,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033098_22",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-QBETRD",
-    "createdAt": "2026-10-10T14:16:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Hélène Girard",
-      "address": "12 rue des Baobabs",
-      "postalCode": "73008",
-      "city": "Nantes",
-      "country": "France",
-      "email": "client24@demo.fr"
+    {
+        "id":  "TS-QBETRD",
+        "createdAt":  "2026-10-10T14:16:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "HÃ©lÃ¨ne Girard",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "73008",
+                         "city":  "Nantes",
+                         "country":  "France",
+                         "email":  "client24@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "coffret-decouverte",
+                          "name":  {
+                                       "fr":  "Coffret DÃ©couverte",
+                                       "en":  "Coffret DÃ©couverte"
+                                   },
+                          "format":  "coffret",
+                          "grind":  null,
+                          "qty":  2,
+                          "unitPrice":  39.9,
+                          "lineTotal":  79.8,
+                          "accent":  "#C07A3A"
+                      },
+                      {
+                          "productId":  "andasibe-floral",
+                          "name":  {
+                                       "fr":  "VallÃ©e dâ€™Andasibe",
+                                       "en":  "VallÃ©e dâ€™Andasibe"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "espresso",
+                          "qty":  6,
+                          "unitPrice":  47.5,
+                          "lineTotal":  285,
+                          "accent":  "#B08A5A"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  364.8,
+        "discount":  0,
+        "shipping":  0,
+        "total":  364.8,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033098_23",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "coffret-decouverte",
-        "name": {
-          "fr": "Coffret Découverte",
-          "en": "Coffret Découverte"
-        },
-        "format": "coffret",
-        "grind": null,
-        "qty": 2,
-        "unitPrice": 39.9,
-        "lineTotal": 79.8,
-        "accent": "#C07A3A"
-      },
-      {
-        "productId": "andasibe-floral",
-        "name": {
-          "fr": "Vallée d’Andasibe",
-          "en": "Vallée d’Andasibe"
-        },
-        "format": "s1000",
-        "grind": "espresso",
-        "qty": 6,
-        "unitPrice": 47.5,
-        "lineTotal": 285,
-        "accent": "#B08A5A"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 364.8,
-    "discount": 0,
-    "shipping": 0,
-    "total": 364.8,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033098_23",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-4HZHDE",
-    "createdAt": "2026-10-14T16:03:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Nadia Rasoanaivo",
-      "address": "12 rue des Baobabs",
-      "postalCode": "74001",
-      "city": "Antananarivo",
-      "country": "France",
-      "email": "client25@demo.fr"
+    {
+        "id":  "TS-4HZHDE",
+        "createdAt":  "2026-10-14T16:03:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Nadia Rasoanaivo",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "74001",
+                         "city":  "Antananarivo",
+                         "country":  "France",
+                         "email":  "client25@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "robusta-toamasina",
+                          "name":  {
+                                       "fr":  "Robusta Bleu de Toamasina",
+                                       "en":  "Robusta Bleu de Toamasina"
+                                   },
+                          "format":  "s250",
+                          "grind":  "espresso",
+                          "qty":  6,
+                          "unitPrice":  10.9,
+                          "lineTotal":  65.4,
+                          "accent":  "#9A6B3F"
+                      },
+                      {
+                          "productId":  "coffret-decouverte",
+                          "name":  {
+                                       "fr":  "Coffret DÃ©couverte",
+                                       "en":  "Coffret DÃ©couverte"
+                                   },
+                          "format":  "coffret",
+                          "grind":  null,
+                          "qty":  2,
+                          "unitPrice":  39.9,
+                          "lineTotal":  79.8,
+                          "accent":  "#C07A3A"
+                      },
+                      {
+                          "productId":  "coffret-prestige",
+                          "name":  {
+                                       "fr":  "Coffret Prestige",
+                                       "en":  "Coffret Prestige"
+                                   },
+                          "format":  "coffret",
+                          "grind":  null,
+                          "qty":  3,
+                          "unitPrice":  59.9,
+                          "lineTotal":  179.7,
+                          "accent":  "#8A5A32"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  324.9,
+        "discount":  0,
+        "shipping":  0,
+        "total":  324.9,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033098_24",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "robusta-toamasina",
-        "name": {
-          "fr": "Robusta Bleu de Toamasina",
-          "en": "Robusta Bleu de Toamasina"
-        },
-        "format": "s250",
-        "grind": "espresso",
-        "qty": 6,
-        "unitPrice": 10.9,
-        "lineTotal": 65.4,
-        "accent": "#9A6B3F"
-      },
-      {
-        "productId": "coffret-decouverte",
-        "name": {
-          "fr": "Coffret Découverte",
-          "en": "Coffret Découverte"
-        },
-        "format": "coffret",
-        "grind": null,
-        "qty": 2,
-        "unitPrice": 39.9,
-        "lineTotal": 79.8,
-        "accent": "#C07A3A"
-      },
-      {
-        "productId": "coffret-prestige",
-        "name": {
-          "fr": "Coffret Prestige",
-          "en": "Coffret Prestige"
-        },
-        "format": "coffret",
-        "grind": null,
-        "qty": 3,
-        "unitPrice": 59.9,
-        "lineTotal": 179.7,
-        "accent": "#8A5A32"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 324.9,
-    "discount": 0,
-    "shipping": 0,
-    "total": 324.9,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033098_24",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-4JGCPM",
-    "createdAt": "2026-10-22T09:05:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Marc Delaunay",
-      "address": "12 rue des Baobabs",
-      "postalCode": "75002",
-      "city": "Lyon",
-      "country": "France",
-      "email": "client26@demo.fr"
+    {
+        "id":  "TS-4JGCPM",
+        "createdAt":  "2026-10-22T09:05:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Marc Delaunay",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "75002",
+                         "city":  "Lyon",
+                         "country":  "France",
+                         "email":  "client26@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "vanille-antalaha",
+                          "name":  {
+                                       "fr":  "Vanille dâ€™Antalaha",
+                                       "en":  "Vanille dâ€™Antalaha"
+                                   },
+                          "format":  "s250",
+                          "grind":  "moka",
+                          "qty":  3,
+                          "unitPrice":  12.5,
+                          "lineTotal":  37.5,
+                          "accent":  "#C8955C"
+                      },
+                      {
+                          "productId":  "fianarantsoa-bio",
+                          "name":  {
+                                       "fr":  "Hauts Plateaux Bio",
+                                       "en":  "Hauts Plateaux Bio"
+                                   },
+                          "format":  "s250",
+                          "grind":  "moka",
+                          "qty":  2,
+                          "unitPrice":  14.9,
+                          "lineTotal":  29.8,
+                          "accent":  "#6B7F5E"
+                      },
+                      {
+                          "productId":  "coffret-prestige",
+                          "name":  {
+                                       "fr":  "Coffret Prestige",
+                                       "en":  "Coffret Prestige"
+                                   },
+                          "format":  "coffret",
+                          "grind":  null,
+                          "qty":  1,
+                          "unitPrice":  59.9,
+                          "lineTotal":  59.9,
+                          "accent":  "#8A5A32"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  127.2,
+        "discount":  0,
+        "shipping":  0,
+        "total":  127.2,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033098_25",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "vanille-antalaha",
-        "name": {
-          "fr": "Vanille d’Antalaha",
-          "en": "Vanille d’Antalaha"
-        },
-        "format": "s250",
-        "grind": "moka",
-        "qty": 3,
-        "unitPrice": 12.5,
-        "lineTotal": 37.5,
-        "accent": "#C8955C"
-      },
-      {
-        "productId": "fianarantsoa-bio",
-        "name": {
-          "fr": "Hauts Plateaux Bio",
-          "en": "Hauts Plateaux Bio"
-        },
-        "format": "s250",
-        "grind": "moka",
-        "qty": 2,
-        "unitPrice": 14.9,
-        "lineTotal": 29.8,
-        "accent": "#6B7F5E"
-      },
-      {
-        "productId": "coffret-prestige",
-        "name": {
-          "fr": "Coffret Prestige",
-          "en": "Coffret Prestige"
-        },
-        "format": "coffret",
-        "grind": null,
-        "qty": 1,
-        "unitPrice": 59.9,
-        "lineTotal": 59.9,
-        "accent": "#8A5A32"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 127.2,
-    "discount": 0,
-    "shipping": 0,
-    "total": 127.2,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033098_25",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-EJH2PP",
-    "createdAt": "2026-09-30T06:59:00.000Z",
-    "status": "shipped",
-    "customer": {
-      "name": "Zoé Mercier",
-      "address": "12 rue des Baobabs",
-      "postalCode": "76003",
-      "city": "Bruxelles",
-      "country": "France",
-      "email": "client27@demo.fr"
+    {
+        "id":  "TS-EJH2PP",
+        "createdAt":  "2026-09-30T06:59:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "ZoÃ© Mercier",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "76003",
+                         "city":  "Bruxelles",
+                         "country":  "France",
+                         "email":  "client27@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "andasibe-floral",
+                          "name":  {
+                                       "fr":  "VallÃ©e dâ€™Andasibe",
+                                       "en":  "VallÃ©e dâ€™Andasibe"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "filtre",
+                          "qty":  2,
+                          "unitPrice":  47.5,
+                          "lineTotal":  95,
+                          "accent":  "#B08A5A"
+                      },
+                      {
+                          "productId":  "ambanja-grand-cru",
+                          "name":  {
+                                       "fr":  "Ambanja Grand Cru",
+                                       "en":  "Ambanja Grand Cru"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "espresso",
+                          "qty":  1,
+                          "unitPrice":  45,
+                          "lineTotal":  45,
+                          "accent":  "#8A5A32"
+                      }
+                  ],
+        "promoCode":  "BIENVENUE10",
+        "subtotal":  140,
+        "discount":  14,
+        "shipping":  0,
+        "total":  126,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033098_26",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "andasibe-floral",
-        "name": {
-          "fr": "Vallée d’Andasibe",
-          "en": "Vallée d’Andasibe"
-        },
-        "format": "s1000",
-        "grind": "filtre",
-        "qty": 2,
-        "unitPrice": 47.5,
-        "lineTotal": 95,
-        "accent": "#B08A5A"
-      },
-      {
-        "productId": "ambanja-grand-cru",
-        "name": {
-          "fr": "Ambanja Grand Cru",
-          "en": "Ambanja Grand Cru"
-        },
-        "format": "s1000",
-        "grind": "espresso",
-        "qty": 1,
-        "unitPrice": 45,
-        "lineTotal": 45,
-        "accent": "#8A5A32"
-      }
-    ],
-    "promoCode": "BIENVENUE10",
-    "subtotal": 140,
-    "discount": 14,
-    "shipping": 0,
-    "total": 126,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033098_26",
-      "last4": "4242"
-    }
-  },
-  {
-    "id": "TS-YTYUMG",
-    "createdAt": "2026-10-24T13:05:00.000Z",
-    "status": "paid",
-    "customer": {
-      "name": "Léo Bernard",
-      "address": "12 rue des Baobabs",
-      "postalCode": "68004",
-      "city": "Paris",
-      "country": "France",
-      "email": "client28@demo.fr"
+    {
+        "id":  "TS-YTYUMG",
+        "createdAt":  "2026-10-24T13:05:00.000Z",
+        "status":  "paid",
+        "customer":  {
+                         "name":  "LÃ©o Bernard",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "68004",
+                         "city":  "Paris",
+                         "country":  "France",
+                         "email":  "client28@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "robusta-toamasina",
+                          "name":  {
+                                       "fr":  "Robusta Bleu de Toamasina",
+                                       "en":  "Robusta Bleu de Toamasina"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "filtre",
+                          "qty":  2,
+                          "unitPrice":  38.5,
+                          "lineTotal":  77,
+                          "accent":  "#9A6B3F"
+                      },
+                      {
+                          "productId":  "cacao-sauvage",
+                          "name":  {
+                                       "fr":  "Cacao Sauvage",
+                                       "en":  "Cacao Sauvage"
+                                   },
+                          "format":  "s250",
+                          "grind":  "filtre",
+                          "qty":  1,
+                          "unitPrice":  11.5,
+                          "lineTotal":  11.5,
+                          "accent":  "#5A4232"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  88.5,
+        "discount":  0,
+        "shipping":  0,
+        "total":  88.5,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793105033098_27",
+                        "last4":  "4242"
+                    }
     },
-    "items": [
-      {
-        "productId": "robusta-toamasina",
-        "name": {
-          "fr": "Robusta Bleu de Toamasina",
-          "en": "Robusta Bleu de Toamasina"
-        },
-        "format": "s1000",
-        "grind": "filtre",
-        "qty": 2,
-        "unitPrice": 38.5,
-        "lineTotal": 77,
-        "accent": "#9A6B3F"
-      },
-      {
-        "productId": "cacao-sauvage",
-        "name": {
-          "fr": "Cacao Sauvage",
-          "en": "Cacao Sauvage"
-        },
-        "format": "s250",
-        "grind": "filtre",
-        "qty": 1,
-        "unitPrice": 11.5,
-        "lineTotal": 11.5,
-        "accent": "#5A4232"
-      }
-    ],
-    "promoCode": null,
-    "subtotal": 88.5,
-    "discount": 0,
-    "shipping": 0,
-    "total": 88.5,
-    "payment": {
-      "provider": "simulation-interne",
-      "transactionId": "sim_demo_1793105033098_27",
-      "last4": "4242"
+    {
+        "id":  "TS-YRA3ME",
+        "createdAt":  "2026-10-25T07:37:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Nadia Rasoanaivo",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "68001",
+                         "city":  "Antananarivo",
+                         "country":  "France",
+                         "email":  "client1@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "cacao-sauvage",
+                          "name":  {
+                                       "fr":  "Cacao Sauvage",
+                                       "en":  "Cacao Sauvage"
+                                   },
+                          "format":  "s250",
+                          "grind":  "espresso",
+                          "qty":  2,
+                          "unitPrice":  11.5,
+                          "lineTotal":  23,
+                          "accent":  "#5A4232"
+                      },
+                      {
+                          "productId":  "coffret-decouverte",
+                          "name":  {
+                                       "fr":  "Coffret DÃ©couverte",
+                                       "en":  "Coffret DÃ©couverte"
+                                   },
+                          "format":  "coffret",
+                          "grind":  null,
+                          "qty":  2,
+                          "unitPrice":  39.9,
+                          "lineTotal":  79.8,
+                          "accent":  "#C07A3A"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  102.8,
+        "discount":  0,
+        "shipping":  0,
+        "total":  102.8,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793289239615_0",
+                        "last4":  "4242"
+                    }
+    },
+    {
+        "id":  "TS-ETBFW7",
+        "createdAt":  "2026-10-22T11:46:00.000Z",
+        "status":  "shipped",
+        "customer":  {
+                         "name":  "Marc Delaunay",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "69002",
+                         "city":  "Lyon",
+                         "country":  "France",
+                         "email":  "client2@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "fianarantsoa-bio",
+                          "name":  {
+                                       "fr":  "Hauts Plateaux Bio",
+                                       "en":  "Hauts Plateaux Bio"
+                                   },
+                          "format":  "s250",
+                          "grind":  "grains",
+                          "qty":  3,
+                          "unitPrice":  14.9,
+                          "lineTotal":  44.7,
+                          "accent":  "#6B7F5E"
+                      },
+                      {
+                          "productId":  "coffret-decouverte",
+                          "name":  {
+                                       "fr":  "Coffret DÃ©couverte",
+                                       "en":  "Coffret DÃ©couverte"
+                                   },
+                          "format":  "coffret",
+                          "grind":  null,
+                          "qty":  2,
+                          "unitPrice":  39.9,
+                          "lineTotal":  79.8,
+                          "accent":  "#C07A3A"
+                      },
+                      {
+                          "productId":  "cacao-sauvage",
+                          "name":  {
+                                       "fr":  "Cacao Sauvage",
+                                       "en":  "Cacao Sauvage"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "espresso",
+                          "qty":  5,
+                          "unitPrice":  40,
+                          "lineTotal":  200,
+                          "accent":  "#5A4232"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  324.5,
+        "discount":  0,
+        "shipping":  0,
+        "total":  324.5,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793289239616_1",
+                        "last4":  "4242"
+                    }
     }
-  }
 ]

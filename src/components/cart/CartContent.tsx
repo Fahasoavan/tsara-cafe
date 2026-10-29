@@ -94,6 +94,15 @@ export function CartContent() {
 
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6">
+      {/* Chapiteau démo — pas de vraies données */}
+      <div
+        role="note"
+        className="mb-8 flex items-center gap-3 rounded-2xl border border-caramel/40 bg-caramel/10 px-4 py-3"
+      >
+        <IconBag className="h-5 w-5 shrink-0 text-caramel-deep" />
+        <p className="text-sm font-medium text-caramel-deep">{t('demo.banner')}</p>
+      </div>
+
       <Reveal className="flex flex-wrap items-baseline justify-between gap-3">
         <h1 className="font-serif text-4xl font-bold tracking-tight">{t('cart.title')}</h1>
         <p aria-live="polite" className="text-sm font-semibold text-noir/55">

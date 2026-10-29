@@ -1,17 +1,30 @@
 import { NextResponse } from 'next/server';
-import { isValidEmail, round2 } from '@/lib/format';
+import { isValidEmail } from '@/lib/format';
 import { computeTotals, createOrder } from '@/lib/orders';
+import { clientIp, rateLimit } from '@/lib/rate-limit';
 import { paymentProvider } from '@/lib/payment';
 import type { CheckoutPayload } from '@/lib/types';
 
 /**
  * POST /api/checkout
- * 1. Valide les données du navigateur (panier, adresse, carte)
- * 2. Recalcule TOUS les totaux à partir du catalogue (jamais les prix du client)
- * 3. Passe le paiement via paymentProvider (simulation)
- * 4. Enregistre la commande dans data/orders.json
+ * 1. Limite la fréquence de saisie (anti-abus)
+ * 2. Valide les données du navigateur (panier, adresse, carte)
+ * 3. Recalcule TOUS les totaux à partir du catalogue (jamais les prix du client)
+ * 4. Passe le paiement via paymentProvider (simulation)
+ * 5. Enregistre la commande (Redis avec TTL 3 jours, ou data/orders.json en local)
+ *
+ * AUCUN appel à `request.body` n'est journalisé : le corps contient des
+ * données personnelles et le numéro de carte — jamais console.log ici.
  */
+const CHECKOUT_LIMIT = 8; // requêtes…
+const CHECKOUT_WINDOW_MS = 10 * 60 * 1000; // …par 10 minutes et par IP
+
 export async function POST(request: Request) {
+  /* --- Limiteur de débit (le plus tôt possible) --- */
+  if (!rateLimit(`checkout:${clientIp(request)}`, CHECKOUT_LIMIT, CHECKOUT_WINDOW_MS)) {
+    return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
+  }
+
   let payload: CheckoutPayload;
   try {
     payload = (await request.json()) as CheckoutPayload;
@@ -44,7 +57,7 @@ export async function POST(request: Request) {
 
   /* --- Paiement (SIMULATION) : montant recalculé, jamais celui du client --- */
   const charge = await paymentProvider.charge({
-    amountEur: round2(totals.total),
+    amountEur: totals.total,
     card: {
       holder: String(payload?.card?.holder ?? ''),
       number: String(payload?.card?.number ?? ''),
@@ -63,7 +76,8 @@ export async function POST(request: Request) {
     const order = await createOrder(payload, totals, charge);
     return NextResponse.json({ id: order.id }, { status: 201 });
   } catch (err) {
-    console.error('[checkout] échec d’enregistrement', err);
+    /* On journalise uniquement le type d'erreur, jamais les données */
+    console.error('[checkout] échec d’enregistrement :', err instanceof Error ? err.name : 'inconnu');
     return NextResponse.json({ error: 'database' }, { status: 500 });
   }
 }

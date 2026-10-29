@@ -1,14 +1,24 @@
 import { NextResponse } from 'next/server';
-import { clearOrders, listOrders } from '@/lib/orders';
+import { isAdmin, unauthorizedResponse } from '@/lib/admin-auth';
+import { fetchOrders, eraseOrders, storageBackend } from '@/lib/orders-store';
+import { maskOrder } from '@/lib/sanitize';
 
-/** GET /api/orders — liste des commandes (écran Admin de démonstration) */
-export async function GET() {
-  const orders = await listOrders();
-  return NextResponse.json({ orders });
+/**
+ * GET /api/orders — liste, récentes d'abord.
+ * Lecture ouverte (le dashboard est visitable en lecture seule), mais le
+ * contenu varie par privilège :
+ *   • sans mot de passe admin : e-mail / rue / code postal MASQUÉS ;
+ *   • avec en-tête Authorization Basic : données complètes (admin légitime).
+ */
+export async function GET(request: Request) {
+  const authorized = isAdmin(request);
+  const orders = await fetchOrders();
+  return NextResponse.json({ orders: authorized ? orders : orders.map(maskOrder), backend: storageBackend() });
 }
 
-/** DELETE /api/orders — purge totale (démonstration Admin) */
-export async function DELETE() {
-  await clearOrders();
+/** DELETE /api/orders — purge totale. Route SENSIBLE : mot de passe requis. */
+export async function DELETE(request: Request) {
+  if (!isAdmin(request)) return unauthorizedResponse();
+  await eraseOrders();
   return NextResponse.json({ ok: true, cleared: true });
 }

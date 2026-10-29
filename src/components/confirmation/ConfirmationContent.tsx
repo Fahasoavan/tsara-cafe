@@ -1,10 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useParams, useSearchParams } from 'next/navigation';
+import { useEffect, useState, type FormEvent } from 'react';
 import { useI18n } from '@/lib/i18n';
-import { formatMoney, formatDate, round2 } from '@/lib/format';
+import { formatMoney, formatDate, isValidEmail, round2 } from '@/lib/format';
 import { Reveal } from '@/components/ui/Reveal';
 import { BagVisual } from '@/components/BagVisual';
 import {
@@ -21,17 +21,28 @@ const STATUS_FLOW = ['paid', 'preparing', 'shipped'] as const;
 export function ConfirmationContent() {
   const { t, locale } = useI18n();
   const params = useParams<{ id: string }>();
+  const searchParams = useSearchParams();
   const id = typeof params.id === 'string' ? params.id : '';
 
+  /* L'e-mail sécurise la consultation : la commande ne s'ouvre pas avec
+     le seul numéro (elle contient le nom et l'adresse du client). */
+  const [email, setEmail] = useState<string | null>(searchParams.get('email'));
+  const [emailInput, setEmailInput] = useState('');
+
   const [order, setOrder] = useState<StoredOrder | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(Boolean(searchParams.get('email')));
   const [missing, setMissing] = useState(false);
+  const [emailError, setEmailError] = useState(false);
 
   useEffect(() => {
+    if (!email) return;
     let cancelled = false;
     (async () => {
       try {
-        const res = await fetch(`/api/orders/${encodeURIComponent(id)}`, { cache: 'no-store' });
+        const res = await fetch(
+          `/api/orders/${encodeURIComponent(id)}?email=${encodeURIComponent(email)}`,
+          { cache: 'no-store' },
+        );
         if (!res.ok) {
           if (!cancelled) setMissing(true);
           return;
@@ -47,7 +58,62 @@ export function ConfirmationContent() {
     return () => {
       cancelled = true;
     };
-  }, [id]);
+  }, [id, email]);
+
+  const requestEmail = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const value = emailInput.trim();
+    if (!isValidEmail(value)) {
+      setEmailError(true);
+      return;
+    }
+    setEmailError(false);
+    setLoading(true);
+    setMissing(false);
+    setEmail(value);
+  };
+
+  /* ---------- Étape e-mail (aucun ?email= dans l'URL) ---------- */
+  if (!email) {
+    return (
+      <div className="mx-auto flex max-w-md flex-col gap-6 px-4 py-24 text-center sm:px-6">
+        <BagVisual accent="#5A4232" className="mx-auto h-24 w-auto opacity-70" aria-hidden />
+        <h1 className="font-serif text-2xl font-bold">{t('confirm.email.title')}</h1>
+        <p className="text-sm text-noir/60">{t('confirm.email.sub')}</p>
+        <form onSubmit={requestEmail} noValidate className="space-y-3 text-left">
+          <label htmlFor="confirm-email">
+            <span className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-noir/55">
+              {t('track.email')} *
+            </span>
+            <input
+              id="confirm-email"
+              type="email"
+              required
+              autoComplete="email"
+              placeholder={t('ph.email')}
+              value={emailInput}
+              onChange={(e) => setEmailInput(e.target.value)}
+              aria-invalid={emailError}
+              className={`w-full rounded-xl border bg-white px-3.5 py-2.5 text-sm text-noir placeholder:text-noir/35 focus-visible:outline-none ${
+                emailError ? 'border-red-400' : 'border-noir/15'
+              }`}
+            />
+          </label>
+          {emailError && (
+            <p role="alert" className="text-xs font-medium text-red-700">
+              {t('confirm.email.invalid')}
+            </p>
+          )}
+          <button type="submit" className="btn-card w-full bg-caramel text-noir shadow-warm hover:-translate-y-0.5">
+            {t('confirm.email.cta')}
+          </button>
+        </form>
+        <Link href="/suivi" className="link-underline text-sm font-medium text-noir/55">
+          {t('confirm.track')}
+        </Link>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
@@ -242,13 +308,16 @@ export function ConfirmationContent() {
       <Reveal delay={260}>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <Link
-            href={`/facture/${encodeURIComponent(order.id)}`}
+            href={`/facture/${encodeURIComponent(order.id)}?email=${encodeURIComponent(order.customer.email)}`}
             className="btn-card bg-noir text-creme hover:-translate-y-0.5 hover:shadow-warm-lg"
           >
             <IconPrinter className="h-4 w-4" />
             {t('confirm.invoice')}
           </Link>
-          <Link href={`/suivi?id=${encodeURIComponent(order.id)}`} className="btn-card bg-caramel text-noir shadow-warm hover:-translate-y-0.5">
+          <Link
+            href={`/suivi?id=${encodeURIComponent(order.id)}&email=${encodeURIComponent(order.customer.email)}`}
+            className="btn-card bg-caramel text-noir shadow-warm hover:-translate-y-0.5"
+          >
             {t('confirm.track')}
             <IconArrowRight className="h-4 w-4" />
           </Link>

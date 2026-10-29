@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { ConfirmationContent } from '@/components/confirmation/ConfirmationContent';
 
@@ -8,5 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default function OrderConfirmationPage() {
-  return <ConfirmationContent />;
+  return (
+    <Suspense fallback={null}>
+      <ConfirmationContent />
+    </Suspense>
+  );
 }

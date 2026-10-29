@@ -6,16 +6,34 @@ import { Reveal } from '@/components/ui/Reveal';
 import { IconLoader, IconRefresh, IconShield, IconTrash } from '@/components/ui/icons';
 import { Dashboard } from '@/components/admin/Dashboard';
 import { OrdersTable } from '@/components/admin/OrdersTable';
+import {
+  AdminAuthError,
+  fetchAsAdmin,
+  isAuthed,
+  setAdminPassword,
+} from '@/lib/admin-client';
 import type { StoredOrder } from '@/lib/types';
 
 type Tab = 'dash' | 'orders';
 
+/**
+ * Écran Admin (démonstration) :
+ *  • lecture ouverte — le dashboard est visitable sans mot de passe,
+ *    mais les données personnelles y sont masquées ;
+ *  • actions protégées (effacer, simuler, statut, démasquer) : elles
+ *    déclenchent la saisie du mot de passe (env var ADMIN_PASSWORD).
+ */
 export function AdminContent() {
   const { t } = useI18n();
 
   const [orders, setOrders] = useState<StoredOrder[] | null>(null);
   const [tab, setTab] = useState<Tab>('dash');
   const [error, setError] = useState<string | null>(null);
+
+  /* Mot de passe admin (saisie à la volée, jamais persistée) */
+  const [authPanelOpen, setAuthPanelOpen] = useState(false);
+  const [passwordInput, setPasswordInput] = useState('');
+  const [authError, setAuthError] = useState(false);
 
   /* Simulation de commandes de démonstration */
   const [seeding, setSeeding] = useState(false);
@@ -25,8 +43,7 @@ export function AdminContent() {
   const [clearState, setClearState] = useState<'idle' | 'confirm' | 'clearing'>('idle');
 
   const refresh = useCallback(async (): Promise<StoredOrder[]> => {
-    const res = await fetch('/api/orders', { cache: 'no-store' });
-    if (!res.ok) throw new Error('http');
+    const res = await fetchAsAdmin('/api/orders', { cache: 'no-store' });
     const body = (await res.json()) as { orders: StoredOrder[] };
     setOrders(body.orders);
     return body.orders;
@@ -36,12 +53,38 @@ export function AdminContent() {
     refresh().catch(() => setError(t('admin.error')));
   }, [refresh, t]);
 
+  /* Saisie du mot de passe puis rechargement (pour démasquer les e-mails) */
+  const submitPassword = async () => {
+    setAdminPassword(passwordInput);
+    try {
+      await refresh();
+      setAuthError(false);
+      setAuthPanelOpen(false);
+      setPasswordInput('');
+    } catch (err) {
+      if (err instanceof AdminAuthError) {
+        /* Mot de passe refusé (ou ADMIN_PASSWORD non défini côté serveur) */
+        setAdminPassword(null);
+        setAuthError(true);
+        return;
+      }
+      setAdminPassword(null);
+      setError(t('admin.error'));
+    }
+  };
+
+  /* Toute action 401 ouvre le panneau de saisie */
+  const requireAuth = () => {
+    setAuthError(false);
+    setAuthPanelOpen(true);
+  };
+
   const seedDemo = async () => {
     if (seeding) return;
     setSeeding(true);
     setError(null);
     try {
-      const res = await fetch('/api/orders/demo', {
+      const res = await fetchAsAdmin('/api/orders/demo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ count: 25 }),
@@ -51,8 +94,12 @@ export function AdminContent() {
       await refresh();
       setSeedFlash(t('admin.demo.seeded', { n: body.created }));
       setTimeout(() => setSeedFlash(null), 2600);
-    } catch {
-      setError(t('admin.error'));
+    } catch (err) {
+      if (err instanceof AdminAuthError) {
+        requireAuth();
+      } else {
+        setError(t('admin.error'));
+      }
     } finally {
       setSeeding(false);
     }
@@ -68,17 +115,23 @@ export function AdminContent() {
     setClearState('clearing');
     setError(null);
     try {
-      const res = await fetch('/api/orders', { method: 'DELETE' });
+      const res = await fetchAsAdmin('/api/orders', { method: 'DELETE' });
       if (!res.ok) throw new Error('http');
       await refresh();
       setSeedFlash(t('admin.demo.cleared'));
       setTimeout(() => setSeedFlash(null), 2600);
-    } catch {
-      setError(t('admin.error'));
+    } catch (err) {
+      if (err instanceof AdminAuthError) {
+        requireAuth();
+      } else {
+        setError(t('admin.error'));
+      }
     } finally {
       setClearState('idle');
     }
   };
+
+  const authed = isAuthed();
 
   const tabButton = (id: Tab, label: string) => (
     <button
@@ -144,8 +197,52 @@ export function AdminContent() {
             )}
             {clearState === 'confirm' ? t('admin.demo.clearConfirm') : t('admin.demo.clear')}
           </button>
+          {!authed && (
+            <button
+              type="button"
+              onClick={() => setAuthPanelOpen((v) => !v)}
+              className="btn-card border border-sauge/60 bg-white px-4 py-2 text-sauge-deep hover:border-sauge"
+            >
+              <IconShield className="h-4 w-4" />
+              {t('admin.auth.unlock')}
+            </button>
+          )}
         </div>
       </Reveal>
+
+      {/* Panneau de déverrouillage */}
+      {authPanelOpen && (
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            void submitPassword();
+          }}
+          className="mt-4 flex flex-wrap items-end gap-3 rounded-2xl border border-sauge/50 bg-white px-4 py-4"
+        >
+          <label className="min-w-56 flex-1">
+            <span className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-noir/55">
+              {t('admin.auth.password')}
+            </span>
+            <input
+              type="password"
+              autoFocus
+              value={passwordInput}
+              onChange={(e) => setPasswordInput(e.target.value)}
+              aria-invalid={authError}
+              className="w-full rounded-xl border border-noir/15 bg-white px-3.5 py-2.5 text-sm text-noir focus-visible:outline-none"
+            />
+          </label>
+          <button type="submit" className="btn-card bg-noir px-4 py-2.5 text-creme hover:bg-caramel hover:text-noir">
+            {t('admin.auth.unlock')}
+          </button>
+          {authError && (
+            <p role="alert" className="w-full text-xs font-medium text-red-700">
+              {t('admin.auth.badPassword')}
+            </p>
+          )}
+          <p className="w-full text-xs text-noir/45">{t('admin.auth.hint')}</p>
+        </form>
+      )}
 
       {error && (
         <p role="alert" className="mt-4 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
@@ -173,6 +270,7 @@ export function AdminContent() {
         <div key="orders" className="animate-fade-up">
           <OrdersTable
             orders={orders}
+            onRequireAuth={requireAuth}
             onOrderChanged={(order) => setOrders((prev) => prev?.map((o) => (o.id === order.id ? order : o)) ?? prev)}
           />
         </div>
