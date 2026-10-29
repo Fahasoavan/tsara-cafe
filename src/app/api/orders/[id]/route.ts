@@ -10,9 +10,10 @@ import { getOrder, getOrderForTracking } from '@/lib/orders';
  */
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } },
+  { params }: { params: Promise<{ id: string }> },
 ) {
-  const id = (params.id ?? '').trim().toUpperCase();
+  const { id: rawId } = await params;
+  const id = (rawId ?? '').trim().toUpperCase();
   const email = new URL(request.url).searchParams.get('email');
 
   if (!id || email === null) return NextResponse.json({ error: 'not_found' }, { status: 404 });

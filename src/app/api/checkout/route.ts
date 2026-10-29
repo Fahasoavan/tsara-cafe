@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { isValidEmail } from '@/lib/format';
 import { computeTotals, createOrder } from '@/lib/orders';
-import { clientIp, rateLimit } from '@/lib/rate-limit';
+import { clientIp, consume } from '@/lib/rate-limit';
 import { paymentProvider } from '@/lib/payment';
 import type { CheckoutPayload } from '@/lib/types';
 
@@ -16,12 +16,9 @@ import type { CheckoutPayload } from '@/lib/types';
  * AUCUN appel à `request.body` n'est journalisé : le corps contient des
  * données personnelles et le numéro de carte — jamais console.log ici.
  */
-const CHECKOUT_LIMIT = 8; // requêtes…
-const CHECKOUT_WINDOW_MS = 10 * 60 * 1000; // …par 10 minutes et par IP
-
 export async function POST(request: Request) {
-  /* --- Limiteur de débit (le plus tôt possible) --- */
-  if (!rateLimit(`checkout:${clientIp(request)}`, CHECKOUT_LIMIT, CHECKOUT_WINDOW_MS)) {
+  /* --- Limiteur de débit distribué (le plus tôt possible) --- */
+  if (!(await consume('checkout', clientIp(request)))) {
     return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
   }
 

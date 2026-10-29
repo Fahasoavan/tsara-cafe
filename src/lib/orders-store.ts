@@ -22,20 +22,22 @@ const TTL_SECONDS = 60 * 60 * 24 * 3; // 3 jours — commandes visiteurs uniquem
 const LIST_KEY = 'orders';
 const orderKey = (id: string) => `order:${id}`;
 
-const DATA_DIR = path.join(process.cwd(), 'data');
-const ORDERS_FILE = path.join(DATA_DIR, 'orders.json');
-
 /* ------------------------------------------------------------------ */
 /* Client Redis (créé paresseusement, null si non configuré)           */
 /* ------------------------------------------------------------------ */
 let redisClient: RedisClient | null | undefined;
 
-function getRedis(): RedisClient | null {
+/** Client Redis paresseux sinon null (partagé avec rate-limit) */
+export function getRedisClient(): RedisClient | null {
   if (redisClient !== undefined) return redisClient;
   const url = process.env.UPSTASH_REDIS_REST_URL;
   const token = process.env.UPSTASH_REDIS_REST_TOKEN;
   redisClient = url && token ? new Redis({ url, token }) : null;
   return redisClient;
+}
+
+function getRedis(): RedisClient | null {
+  return getRedisClient();
 }
 
 /** Upstash Redis est-il le stockage actif ? (affiché / documenté) */
@@ -49,14 +51,18 @@ export function storageBackend(): 'redis' | 'file' {
 async function redisSave(orders: StoredOrder[], persistent: boolean): Promise<void> {
   const redis = getRedis();
   if (!redis) throw new Error('Redis indisponible.');
+  /* Toutes les écritures partent en UNE seule requête réseau (pipeline) :
+     60 commandes = 1 appel au lieu de 120. */
+  const pipeline = redis.pipeline();
   for (const order of orders) {
     if (persistent) {
-      await redis.set(orderKey(order.id), order); // sans expiration
+      pipeline.set(orderKey(order.id), order); // sans expiration
     } else {
-      await redis.set(orderKey(order.id), order, { ex: TTL_SECONDS });
+      pipeline.set(orderKey(order.id), order, { ex: TTL_SECONDS });
     }
-    await redis.zadd(LIST_KEY, { score: Date.now(), member: order.id });
+    pipeline.zadd(LIST_KEY, { score: Date.now(), member: order.id });
   }
+  await pipeline.exec();
 }
 
 async function redisGet(id: string): Promise<StoredOrder | undefined> {
@@ -79,12 +85,12 @@ async function redisList(limit = 500): Promise<StoredOrder[]> {
 async function redisReplace(id: string, order: StoredOrder): Promise<StoredOrder | undefined> {
   const existing = await redisGet(id);
   if (!existing) return undefined;
-  /* Le TTL est réamorcé (RESET TTL) : sans effet sur les commandes de
-     démonstration (sans expiration) ; les commandes visiteeurs repartent
-     pour 3 jours après une modification de statut — comportement assumé. */
+  /* keepTtl : le TTL existant est PRÉSERVÉ — indispensable pour les commandes
+     de démonstration (sans expiration) et pour que les commandes visiteurs
+     ne voient pas leur TTL repartir à 3 jours après un changement de statut. */
   const redis = getRedis();
   if (!redis) throw new Error('Redis indisponible.');
-  await redis.set(orderKey(id), order, { ex: TTL_SECONDS });
+  await redis.set(orderKey(id), order, { keepTtl: true });
   return order;
 }
 
@@ -99,13 +105,36 @@ async function redisClear(): Promise<void> {
 /* ------------------------------------------------------------------ */
 /* Implémentation fichier (dev)                                        */
 /* ------------------------------------------------------------------ */
+/* `orders.json` est GITIGNORÉ (il change à chaque commande locale).
+   Un jeu de départ est fourni par `data/orders.seed.json` (committé) :
+   au premier lancement, il est copié en `orders.json` pour que le
+   dashboard ne soit jamais vide. */
+
+const DATA_DIR = path.join(process.cwd(), 'data');
+const ORDERS_FILE = path.join(DATA_DIR, 'orders.json');
+const SEED_FILE = path.join(DATA_DIR, 'orders.seed.json');
+
+async function ensureSeed(): Promise<void> {
+  try {
+    await fsp.access(ORDERS_FILE);
+  } catch {
+    try {
+      await fsp.copyFile(SEED_FILE, ORDERS_FILE);
+    } catch {
+      /* pas de seed non plus : registre vide */
+    }
+  }
+}
+
 async function fileReadAll(): Promise<StoredOrder[]> {
+  await ensureSeed();
   try {
     const raw = await fsp.readFile(ORDERS_FILE, 'utf8');
-    const parsed: unknown = JSON.parse(raw);
+    /* tolère un éventuel BOM UTF-8 (édition manuelle du fichier) */
+    const parsed: unknown = JSON.parse(raw.replace(/^\uFEFF/, ''));
     if (Array.isArray(parsed)) return parsed as StoredOrder[];
   } catch {
-    /* fichier absent ou corrompu : on repart de zéro */
+    /* fichier absent, BOM mal géré ou corrompu : on repart de zéro */
   }
   return [];
 }

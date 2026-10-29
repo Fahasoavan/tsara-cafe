@@ -11,9 +11,10 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const product = getProductBySlug(params.slug);
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
   if (!product) {
     return { title: 'Produit introuvable' };
   }
@@ -27,9 +28,10 @@ export async function generateMetadata({
   };
 }
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  if (!getProductBySlug(params.slug)) {
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  if (!getProductBySlug(slug)) {
     notFound();
   }
-  return <ProductContent slug={params.slug} />;
+  return <ProductContent slug={slug} />;
 }

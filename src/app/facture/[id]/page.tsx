@@ -20,11 +20,12 @@ export default async function InvoicePage({
   params,
   searchParams,
 }: {
-  params: { id: string };
-  searchParams: { email?: string };
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ email?: string }>;
 }) {
-  const id = (params.id ?? '').trim().toUpperCase();
-  const email = searchParams?.email;
+  const { id: rawId } = await params;
+  const { email } = await searchParams;
+  const id = (rawId ?? '').trim().toUpperCase();
   const order = email ? await getOrderForTracking(id, email) : undefined;
   if (!order) {
     notFound();

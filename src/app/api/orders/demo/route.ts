@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { PRODUCTS, type FormatId, type GrindId } from '@/data/products';
-import { isAdmin, unauthorizedResponse } from '@/lib/admin-auth';
-import { clientIp, rateLimit } from '@/lib/rate-limit';
+import { checkAdmin, limitedResponse, unauthorizedResponse } from '@/lib/admin-auth';
+import { clientIp, consume } from '@/lib/rate-limit';
 import { fetchOrders, storeOrders } from '@/lib/orders-store';
 import { computeTotals, itemsFromLines, composeOrder } from '@/lib/orders';
 import type { CartLine, OrderStatus, StoredOrder } from '@/lib/types';
@@ -12,16 +12,17 @@ import type { CartLine, OrderStatus, StoredOrder } from '@/lib/types';
  * 30 derniers jours, pour donner vie au tableau de bord de l'admin.
  * Corps : { count?: number } (1–60, 25 par défaut).
  *
- * Route SENSIBLE (inonde la base) : mot de passe admin requis + limite
- * de fréquence en seconde barrière. Les commandes créées sont stockées
- * SANS expiration (flag `persistent`) : le dashboard ne se vide jamais.
+ * Route SENSIBLE (inonde la base) : mot de passe admin requis, puis
+ * limiteur de débit distribué (@upstash/ratelimit) en seconde barrière.
+ * Les commandes créées sont stockées SANS expiration (flag `persistent`)
+ * : le dashboard ne se vide jamais.
  */
-const DEMO_LIMIT = 5; // générations…
-const DEMO_WINDOW_MS = 60_000; // …par minute et par IP
 
 export async function POST(request: Request) {
-  if (!isAdmin(request)) return unauthorizedResponse();
-  if (!rateLimit(`demo:${clientIp(request)}`, DEMO_LIMIT, DEMO_WINDOW_MS)) {
+  const auth = await checkAdmin(request);
+  if (auth === 'limited') return limitedResponse();
+  if (auth !== 'ok') return unauthorizedResponse();
+  if (!(await consume('demo', clientIp(request)))) {
     return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
   }
 

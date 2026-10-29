@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { isAdmin, unauthorizedResponse } from '@/lib/admin-auth';
+import { checkAdmin, limitedResponse, unauthorizedResponse } from '@/lib/admin-auth';
 import { updateOrderStatus } from '@/lib/orders';
 import { ORDER_STATUSES, type OrderStatus } from '@/lib/types';
 
@@ -9,9 +9,11 @@ import { ORDER_STATUSES, type OrderStatus } from '@/lib/types';
  */
 export async function PATCH(
   request: Request,
-  { params }: { params: { id: string } },
+  { params }: { params: Promise<{ id: string }> },
 ) {
-  if (!isAdmin(request)) return unauthorizedResponse();
+  const auth = await checkAdmin(request);
+  if (auth === 'limited') return limitedResponse();
+  if (auth !== 'ok') return unauthorizedResponse();
 
   let body: { status?: string };
   try {
@@ -25,7 +27,8 @@ export async function PATCH(
     return NextResponse.json({ error: 'invalid_status' }, { status: 400 });
   }
 
-  const updated = await updateOrderStatus((params.id ?? '').trim().toUpperCase(), status as OrderStatus);
+  const { id } = await params;
+  const updated = await updateOrderStatus((id ?? '').trim().toUpperCase(), status as OrderStatus);
   if (!updated) return NextResponse.json({ error: 'not_found' }, { status: 404 });
 
   return NextResponse.json({ order: updated });

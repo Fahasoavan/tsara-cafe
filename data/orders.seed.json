@@ -1,4 +1,4 @@
-﻿[
+[
     {
         "id":  "TS-NTVQZ3",
         "createdAt":  "2026-10-15T15:42:00.000Z",
@@ -80,7 +80,7 @@
         "createdAt":  "2026-10-25T14:13:00.000Z",
         "status":  "paid",
         "customer":  {
-                         "name":  "ZoÃ© Mercier",
+                         "name":  "ZoÃƒÂ© Mercier",
                          "address":  "12 rue des Baobabs",
                          "postalCode":  "70003",
                          "city":  "Bruxelles",
@@ -118,7 +118,7 @@
         "createdAt":  "2026-10-19T08:52:00.000Z",
         "status":  "shipped",
         "customer":  {
-                         "name":  "LÃ©o Bernard",
+                         "name":  "LÃƒÂ©o Bernard",
                          "address":  "12 rue des Baobabs",
                          "postalCode":  "71004",
                          "city":  "Paris",
@@ -129,8 +129,8 @@
                       {
                           "productId":  "plateaux-antsirabe",
                           "name":  {
-                                       "fr":  "Plateaux dâ€™Antsirabe",
-                                       "en":  "Plateaux dâ€™Antsirabe"
+                                       "fr":  "Plateaux dÃ¢â‚¬â„¢Antsirabe",
+                                       "en":  "Plateaux dÃ¢â‚¬â„¢Antsirabe"
                                    },
                           "format":  "s1000",
                           "grind":  "espresso",
@@ -180,8 +180,8 @@
                       {
                           "productId":  "andasibe-floral",
                           "name":  {
-                                       "fr":  "VallÃ©e dâ€™Andasibe",
-                                       "en":  "VallÃ©e dâ€™Andasibe"
+                                       "fr":  "VallÃƒÂ©e dÃ¢â‚¬â„¢Andasibe",
+                                       "en":  "VallÃƒÂ©e dÃ¢â‚¬â„¢Andasibe"
                                    },
                           "format":  "s1000",
                           "grind":  "piston",
@@ -312,7 +312,7 @@
                          "name":  "Emma Petit",
                          "address":  "12 rue des Baobabs",
                          "postalCode":  "75008",
-                         "city":  "GenÃ¨ve",
+                         "city":  "GenÃƒÂ¨ve",
                          "country":  "France",
                          "email":  "client8@demo.fr"
                      },
@@ -333,8 +333,8 @@
                       {
                           "productId":  "vanille-antalaha",
                           "name":  {
-                                       "fr":  "Vanille dâ€™Antalaha",
-                                       "en":  "Vanille dâ€™Antalaha"
+                                       "fr":  "Vanille dÃ¢â‚¬â„¢Antalaha",
+                                       "en":  "Vanille dÃ¢â‚¬â„¢Antalaha"
                                    },
                           "format":  "s250",
                           "grind":  "espresso",
@@ -473,8 +473,8 @@
                       {
                           "productId":  "vanille-antalaha",
                           "name":  {
-                                       "fr":  "Vanille dâ€™Antalaha",
-                                       "en":  "Vanille dâ€™Antalaha"
+                                       "fr":  "Vanille dÃ¢â‚¬â„¢Antalaha",
+                                       "en":  "Vanille dÃ¢â‚¬â„¢Antalaha"
                                    },
                           "format":  "s1000",
                           "grind":  "filtre",
@@ -499,8 +499,8 @@
                       {
                           "productId":  "andasibe-floral",
                           "name":  {
-                                       "fr":  "VallÃ©e dâ€™Andasibe",
-                                       "en":  "VallÃ©e dâ€™Andasibe"
+                                       "fr":  "VallÃƒÂ©e dÃ¢â‚¬â„¢Andasibe",
+                                       "en":  "VallÃƒÂ©e dÃ¢â‚¬â„¢Andasibe"
                                    },
                           "format":  "s250",
                           "grind":  "espresso",
@@ -526,7 +526,7 @@
         "createdAt":  "2026-10-19T13:23:00.000Z",
         "status":  "shipped",
         "customer":  {
-                         "name":  "HÃ©lÃ¨ne Girard",
+                         "name":  "HÃƒÂ©lÃƒÂ¨ne Girard",
                          "address":  "12 rue des Baobabs",
                          "postalCode":  "70004",
                          "city":  "Nantes",
@@ -537,8 +537,8 @@
                       {
                           "productId":  "andasibe-floral",
                           "name":  {
-                                       "fr":  "VallÃ©e dâ€™Andasibe",
-                                       "en":  "VallÃ©e dâ€™Andasibe"
+                                       "fr":  "VallÃƒÂ©e dÃ¢â‚¬â„¢Andasibe",
+                                       "en":  "VallÃƒÂ©e dÃ¢â‚¬â„¢Andasibe"
                                    },
                           "format":  "s1000",
                           "grind":  "filtre",
@@ -588,8 +588,8 @@
                       {
                           "productId":  "plateaux-antsirabe",
                           "name":  {
-                                       "fr":  "Plateaux dâ€™Antsirabe",
-                                       "en":  "Plateaux dâ€™Antsirabe"
+                                       "fr":  "Plateaux dÃ¢â‚¬â„¢Antsirabe",
+                                       "en":  "Plateaux dÃ¢â‚¬â„¢Antsirabe"
                                    },
                           "format":  "s1000",
                           "grind":  "piston",
@@ -639,8 +639,8 @@
                       {
                           "productId":  "plateaux-antsirabe",
                           "name":  {
-                                       "fr":  "Plateaux dâ€™Antsirabe",
-                                       "en":  "Plateaux dâ€™Antsirabe"
+                                       "fr":  "Plateaux dÃ¢â‚¬â„¢Antsirabe",
+                                       "en":  "Plateaux dÃ¢â‚¬â„¢Antsirabe"
                                    },
                           "format":  "s250",
                           "grind":  "espresso",
@@ -692,7 +692,7 @@
         "createdAt":  "2026-10-08T12:07:00.000Z",
         "status":  "shipped",
         "customer":  {
-                         "name":  "ZoÃ© Mercier",
+                         "name":  "ZoÃƒÂ© Mercier",
                          "address":  "12 rue des Baobabs",
                          "postalCode":  "73007",
                          "city":  "Bruxelles",
@@ -729,8 +729,8 @@
                       {
                           "productId":  "plateaux-antsirabe",
                           "name":  {
-                                       "fr":  "Plateaux dâ€™Antsirabe",
-                                       "en":  "Plateaux dâ€™Antsirabe"
+                                       "fr":  "Plateaux dÃ¢â‚¬â„¢Antsirabe",
+                                       "en":  "Plateaux dÃ¢â‚¬â„¢Antsirabe"
                                    },
                           "format":  "s1000",
                           "grind":  "piston",
@@ -756,7 +756,7 @@
         "createdAt":  "2026-10-09T11:42:00.000Z",
         "status":  "shipped",
         "customer":  {
-                         "name":  "LÃ©o Bernard",
+                         "name":  "LÃƒÂ©o Bernard",
                          "address":  "12 rue des Baobabs",
                          "postalCode":  "74008",
                          "city":  "Paris",
@@ -767,8 +767,8 @@
                       {
                           "productId":  "coffret-decouverte",
                           "name":  {
-                                       "fr":  "Coffret DÃ©couverte",
-                                       "en":  "Coffret DÃ©couverte"
+                                       "fr":  "Coffret DÃƒÂ©couverte",
+                                       "en":  "Coffret DÃƒÂ©couverte"
                                    },
                           "format":  "coffret",
                           "grind":  null,
@@ -843,7 +843,7 @@
     {
         "id":  "TS-Q4Y9NL",
         "createdAt":  "2026-10-27T11:27:00.000Z",
-        "status":  "shipped",
+        "status":  "preparing",
         "customer":  {
                          "name":  "Ando Rakotondrabe",
                          "address":  "12 rue des Baobabs",
@@ -856,8 +856,8 @@
                       {
                           "productId":  "vanille-antalaha",
                           "name":  {
-                                       "fr":  "Vanille dâ€™Antalaha",
-                                       "en":  "Vanille dâ€™Antalaha"
+                                       "fr":  "Vanille dÃ¢â‚¬â„¢Antalaha",
+                                       "en":  "Vanille dÃ¢â‚¬â„¢Antalaha"
                                    },
                           "format":  "s1000",
                           "grind":  "filtre",
@@ -933,8 +933,8 @@
                       {
                           "productId":  "vanille-antalaha",
                           "name":  {
-                                       "fr":  "Vanille dâ€™Antalaha",
-                                       "en":  "Vanille dâ€™Antalaha"
+                                       "fr":  "Vanille dÃ¢â‚¬â„¢Antalaha",
+                                       "en":  "Vanille dÃ¢â‚¬â„¢Antalaha"
                                    },
                           "format":  "s1000",
                           "grind":  "espresso",
@@ -963,7 +963,7 @@
                          "name":  "Emma Petit",
                          "address":  "12 rue des Baobabs",
                          "postalCode":  "69004",
-                         "city":  "GenÃ¨ve",
+                         "city":  "GenÃƒÂ¨ve",
                          "country":  "France",
                          "email":  "client20@demo.fr"
                      },
@@ -971,8 +971,8 @@
                       {
                           "productId":  "plateaux-antsirabe",
                           "name":  {
-                                       "fr":  "Plateaux dâ€™Antsirabe",
-                                       "en":  "Plateaux dâ€™Antsirabe"
+                                       "fr":  "Plateaux dÃ¢â‚¬â„¢Antsirabe",
+                                       "en":  "Plateaux dÃ¢â‚¬â„¢Antsirabe"
                                    },
                           "format":  "s250",
                           "grind":  "moka",
@@ -1124,8 +1124,8 @@
                       {
                           "productId":  "andasibe-floral",
                           "name":  {
-                                       "fr":  "VallÃ©e dâ€™Andasibe",
-                                       "en":  "VallÃ©e dâ€™Andasibe"
+                                       "fr":  "VallÃƒÂ©e dÃ¢â‚¬â„¢Andasibe",
+                                       "en":  "VallÃƒÂ©e dÃ¢â‚¬â„¢Andasibe"
                                    },
                           "format":  "s1000",
                           "grind":  "moka",
@@ -1151,7 +1151,7 @@
         "createdAt":  "2026-10-10T14:16:00.000Z",
         "status":  "shipped",
         "customer":  {
-                         "name":  "HÃ©lÃ¨ne Girard",
+                         "name":  "HÃƒÂ©lÃƒÂ¨ne Girard",
                          "address":  "12 rue des Baobabs",
                          "postalCode":  "73008",
                          "city":  "Nantes",
@@ -1162,8 +1162,8 @@
                       {
                           "productId":  "coffret-decouverte",
                           "name":  {
-                                       "fr":  "Coffret DÃ©couverte",
-                                       "en":  "Coffret DÃ©couverte"
+                                       "fr":  "Coffret DÃƒÂ©couverte",
+                                       "en":  "Coffret DÃƒÂ©couverte"
                                    },
                           "format":  "coffret",
                           "grind":  null,
@@ -1175,8 +1175,8 @@
                       {
                           "productId":  "andasibe-floral",
                           "name":  {
-                                       "fr":  "VallÃ©e dâ€™Andasibe",
-                                       "en":  "VallÃ©e dâ€™Andasibe"
+                                       "fr":  "VallÃƒÂ©e dÃ¢â‚¬â„¢Andasibe",
+                                       "en":  "VallÃƒÂ©e dÃ¢â‚¬â„¢Andasibe"
                                    },
                           "format":  "s1000",
                           "grind":  "espresso",
@@ -1226,8 +1226,8 @@
                       {
                           "productId":  "coffret-decouverte",
                           "name":  {
-                                       "fr":  "Coffret DÃ©couverte",
-                                       "en":  "Coffret DÃ©couverte"
+                                       "fr":  "Coffret DÃƒÂ©couverte",
+                                       "en":  "Coffret DÃƒÂ©couverte"
                                    },
                           "format":  "coffret",
                           "grind":  null,
@@ -1277,8 +1277,8 @@
                       {
                           "productId":  "vanille-antalaha",
                           "name":  {
-                                       "fr":  "Vanille dâ€™Antalaha",
-                                       "en":  "Vanille dâ€™Antalaha"
+                                       "fr":  "Vanille dÃ¢â‚¬â„¢Antalaha",
+                                       "en":  "Vanille dÃ¢â‚¬â„¢Antalaha"
                                    },
                           "format":  "s250",
                           "grind":  "moka",
@@ -1330,7 +1330,7 @@
         "createdAt":  "2026-09-30T06:59:00.000Z",
         "status":  "shipped",
         "customer":  {
-                         "name":  "ZoÃ© Mercier",
+                         "name":  "ZoÃƒÂ© Mercier",
                          "address":  "12 rue des Baobabs",
                          "postalCode":  "76003",
                          "city":  "Bruxelles",
@@ -1341,8 +1341,8 @@
                       {
                           "productId":  "andasibe-floral",
                           "name":  {
-                                       "fr":  "VallÃ©e dâ€™Andasibe",
-                                       "en":  "VallÃ©e dâ€™Andasibe"
+                                       "fr":  "VallÃƒÂ©e dÃ¢â‚¬â„¢Andasibe",
+                                       "en":  "VallÃƒÂ©e dÃ¢â‚¬â„¢Andasibe"
                                    },
                           "format":  "s1000",
                           "grind":  "filtre",
@@ -1381,7 +1381,7 @@
         "createdAt":  "2026-10-24T13:05:00.000Z",
         "status":  "paid",
         "customer":  {
-                         "name":  "LÃ©o Bernard",
+                         "name":  "LÃƒÂ©o Bernard",
                          "address":  "12 rue des Baobabs",
                          "postalCode":  "68004",
                          "city":  "Paris",
@@ -1456,8 +1456,8 @@
                       {
                           "productId":  "coffret-decouverte",
                           "name":  {
-                                       "fr":  "Coffret DÃ©couverte",
-                                       "en":  "Coffret DÃ©couverte"
+                                       "fr":  "Coffret DÃƒÂ©couverte",
+                                       "en":  "Coffret DÃƒÂ©couverte"
                                    },
                           "format":  "coffret",
                           "grind":  null,
@@ -1507,8 +1507,8 @@
                       {
                           "productId":  "coffret-decouverte",
                           "name":  {
-                                       "fr":  "Coffret DÃ©couverte",
-                                       "en":  "Coffret DÃ©couverte"
+                                       "fr":  "Coffret DÃƒÂ©couverte",
+                                       "en":  "Coffret DÃƒÂ©couverte"
                                    },
                           "format":  "coffret",
                           "grind":  null,
@@ -1539,6 +1539,108 @@
         "payment":  {
                         "provider":  "simulation-interne",
                         "transactionId":  "sim_demo_1793289239616_1",
+                        "last4":  "4242"
+                    }
+    },
+    {
+        "id":  "TS-PPQ5WX",
+        "createdAt":  "2026-10-29T05:01:00.000Z",
+        "status":  "preparing",
+        "customer":  {
+                         "name":  "Nadia Rasoanaivo",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "68001",
+                         "city":  "Antananarivo",
+                         "country":  "France",
+                         "email":  "client1@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "bourbon-pointu",
+                          "name":  {
+                                       "fr":  "Bourbon Pointu",
+                                       "en":  "Bourbon Pointu"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "moka",
+                          "qty":  3,
+                          "unitPrice":  89,
+                          "lineTotal":  267,
+                          "accent":  "#C07A3A"
+                      },
+                      {
+                          "productId":  "vanille-antalaha",
+                          "name":  {
+                                       "fr":  "Vanille dâ€™Antalaha",
+                                       "en":  "Vanille dâ€™Antalaha"
+                                   },
+                          "format":  "s250",
+                          "grind":  "moka",
+                          "qty":  3,
+                          "unitPrice":  12.5,
+                          "lineTotal":  37.5,
+                          "accent":  "#C8955C"
+                      }
+                  ],
+        "promoCode":  "BIENVENUE10",
+        "subtotal":  304.5,
+        "discount":  30.45,
+        "shipping":  0,
+        "total":  274.05,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793311238633_0",
+                        "last4":  "4242"
+                    }
+    },
+    {
+        "id":  "TS-KHASXX",
+        "createdAt":  "2026-10-25T12:45:00.000Z",
+        "status":  "preparing",
+        "customer":  {
+                         "name":  "Marc Delaunay",
+                         "address":  "12 rue des Baobabs",
+                         "postalCode":  "69002",
+                         "city":  "Lyon",
+                         "country":  "France",
+                         "email":  "client2@demo.fr"
+                     },
+        "items":  [
+                      {
+                          "productId":  "fianarantsoa-bio",
+                          "name":  {
+                                       "fr":  "Hauts Plateaux Bio",
+                                       "en":  "Hauts Plateaux Bio"
+                                   },
+                          "format":  "s1000",
+                          "grind":  "espresso",
+                          "qty":  1,
+                          "unitPrice":  52,
+                          "lineTotal":  52,
+                          "accent":  "#6B7F5E"
+                      },
+                      {
+                          "productId":  "coffret-prestige",
+                          "name":  {
+                                       "fr":  "Coffret Prestige",
+                                       "en":  "Coffret Prestige"
+                                   },
+                          "format":  "coffret",
+                          "grind":  null,
+                          "qty":  1,
+                          "unitPrice":  59.9,
+                          "lineTotal":  59.9,
+                          "accent":  "#8A5A32"
+                      }
+                  ],
+        "promoCode":  null,
+        "subtotal":  111.9,
+        "discount":  0,
+        "shipping":  0,
+        "total":  111.9,
+        "payment":  {
+                        "provider":  "simulation-interne",
+                        "transactionId":  "sim_demo_1793311238633_1",
                         "last4":  "4242"
                     }
     }
